@@ -1,39 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { count, Observable, Subscribable, Subscription } from 'rxjs';
-import { ProdottoService } from '../prodotto.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
 
-  private subscription?: Subscription
-
-  constructor(private router: Router, private prodService: ProdottoService) {
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    this.subscription = this.prodService.observable.subscribe({
-        next: count => {
-          console.log(count);
-        },
-        error: error => {
-          console.log(error);
-        },
-        complete: () => {
-          console.log("complete");
-        }
-    })
   }
 
-  ngOnDestroy(): void {
-    this.subscription?.unsubscribe()
-  }
-
-  onVaiAProdotto() {
-    this.router.navigate(["/prodotti"])
-  }
 }
