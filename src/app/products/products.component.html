@@ -1,1 +1,26 @@
-<p>products works!</p>
+<p>{{products | json}}</p>
+
+<div class="product-container">
+
+  <div *ngFor="let product of products" class="card product-card" style="width: 18rem;">
+    <div class="product-image">
+      <img [src]="'/assets/images/' + product.photo" class="card-img-top card-resize" alt="...">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{product.price + " $"}}</p>
+    </div>
+    <ul class="list-group list-group-flush card-product-reviews">
+      <fa-icon [icon]="faStar" [ngClass]="product.reviews >= 1 ? 'star-yellow' : 'star-black'"></fa-icon>
+      <fa-icon [icon]="faStar" [ngClass]="product.reviews >= 2 ? 'star-yellow' : 'star-black'"></fa-icon>
+      <fa-icon [icon]="faStar" [ngClass]="product.reviews >= 3 ? 'star-yellow' : 'star-black'"></fa-icon>
+      <fa-icon [icon]="faStar" [ngClass]="product.reviews >= 4 ? 'star-yellow' : 'star-black'"></fa-icon>
+      <fa-icon [icon]="faStar" [ngClass]="product.reviews >= 5 ? 'star-yellow' : 'star-black'"></fa-icon>
+    </ul>
+    <div class="card-body card-more-info">
+      <a [routerLink]="product.slug">More info</a>
+    </div>
+  </div>
+
+</div>
+
