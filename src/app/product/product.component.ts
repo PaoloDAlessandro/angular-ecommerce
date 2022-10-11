@@ -11,17 +11,26 @@ import { ProductsService } from '../products.service';
 })
 export class ProductComponent implements OnInit {
 
+  productCart?:Product
   product?:Product
   subscription?:Subscription
+  quantity: Number = 1
 
   constructor(private route: ActivatedRoute, private productService: ProductsService, private router: Router) {
     const { slug } = route?.snapshot.params ?? {}
     this.product =  productService.searchProduct(slug)
-    console.log(this.product);
-
    }
 
   ngOnInit(): void {
+  }
+
+  onAddToCartCall() {
+    if (this.product != undefined) {
+      this.productCart = {code: this.product.code, name: this.product?.name, category: this.product.category, slug: this.product.slug, description: this.product.description, price: this.product.price, photo: this.product.photo, stock:this.quantity, reviews: this.product.reviews }
+    }
+    this.productService.addToCart(this.productCart as Product)
+    console.log(this.productService.cart);
+
   }
 
 }

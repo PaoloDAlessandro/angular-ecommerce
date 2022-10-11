@@ -15,8 +15,10 @@
           <div class="nav-align-vertical">
           <button type="button" class="btn btn-outline-light me-2">Login</button>
           <button type="button" class="btn btn-warning">Sign-up</button>
-          <fa-icon [icon]="faCartShopping"></fa-icon>
-        </div>
+          <a routerLink="/cart" routerLinkActive="text-secondary" class="header-link">
+            <fa-icon [icon]="faCartShopping"></fa-icon>
+          </a>
+          </div>
       </div>
     </div>
   </div>
