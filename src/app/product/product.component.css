@@ -1,0 +1,19 @@
+.background-gray {
+  background-color: rgba(215, 230, 236, 0.3);
+}
+
+.background-white {
+  background-color: white;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.product-image-resize {
+  max-height: 500px;
+  object-fit: contain;  
+}

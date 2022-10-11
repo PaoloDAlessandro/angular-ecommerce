@@ -8,9 +8,11 @@ import { Product } from './dati/product.data';
 export class ProductsService {
 
   private _products :Product[] = [
-    {code:"001", name:"Iphone XR 64GB", category:"smarthphone", slug:"iphone-xr", photo:"iphoneXr.jpg", price:500.50, stock:3, reviews:4},
-    {code:"002", name:"MacBook Pro 2021", category:"laptop", slug:"macbookpro-2021", photo:"macbookpro.jpeg", price:2549, stock:7, reviews:5},
-    {code:"003", name:"Sennheiser HD 450BT", category:"headphone", slug:"sennheiser-hd-450bt", photo:"sennheiserhd450bt.jpeg", price:199.99, stock:23, reviews:3},
+    {code:"001", name:"Iphone XR 64GB", category:"smarthphone", description:"", slug:"iphone-xr", photo:"iphonexr.jpg", price:"500.50", stock:3, reviews:4},
+    {code:"002", name:"MacBook Pro 2021", category:"laptop", description:"The blazing-fast M1 Pro or M1 max chip for groundbreaking performance and amazing battery life. A Stunning Liquid Retina XDR display and all the ports you need. This is the notebook you've been waiting for.", slug:"macbookpro-2021", photo:"macbookpro.jpeg", price:"2549.00", stock:7, reviews:5},
+    {code:"003", name:"Sennheiser HD 450BT", category:"headphone", description:"Step up to great wireless sound with the HD 450BT from Sennheiser. Whether relaxing at home or on the go, they offer an exceptional combination of versatility and superior sound. Created by audio specialist Sennheiser to deliver a superior sound experience with deep dynamic bass, they feature active noise cancellation to ensure enjoyment without distraction.", slug:"sennheiser-hd-450bt", photo:"sennheiserhd450bt.jpeg", price:"199.99", stock:26, reviews:3},
+    {code:"004", name:"Xiaomi Redmi Note 11 Pro 5G", category:"smartphone", description:"108MP Powerhous 120Hz FHD+ AMOLED DotDisplay 67W turbo charging. Smoother, faster and more efficient. For those who want the ultimate experience，Snapdragon® 695 5G processor is ready.", slug:"redminote11pro5g", photo:"xiaomiredminote11pro.png", price:"376.97", stock:12, reviews:5},
+    {code:"005", name:"Apple AirPods Pro 2", category:"headphones", description:"Dual beamforming microphones, Inward-facing microphone, Skin-detect sensor, Motion-detecting accelerometer, Speech-detecting accelerometer, Touch control.", slug:"airpods2", photo:"airpods2.jpg", price:"269.99", stock:2, reviews:5},
   ]
 
   public emitter = new Subject<Product[]>()

@@ -3,8 +3,9 @@ export type Product = {
   name:string,
   category:string
   slug:string,
+  description:string,
   photo:string,
-  price:Number,
+  price:string,
   stock:Number,
   reviews:Number
 }

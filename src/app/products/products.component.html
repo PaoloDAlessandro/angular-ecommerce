@@ -1,5 +1,3 @@
-<p>{{products | json}}</p>
-
 <div class="product-container">
 
   <div *ngFor="let product of products" class="card product-card" style="width: 18rem;">
@@ -8,7 +6,7 @@
     </div>
     <div class="card-body">
       <h5 class="card-title">{{product.name}}</h5>
-      <p class="card-text">{{product.price + " $"}}</p>
+        <p class="card-text">{{product.price + "$"}}</p>
     </div>
     <ul class="list-group list-group-flush card-product-reviews">
       <fa-icon [icon]="faStar" [ngClass]="product.reviews >= 1 ? 'star-yellow' : 'star-black'"></fa-icon>
@@ -18,9 +16,11 @@
       <fa-icon [icon]="faStar" [ngClass]="product.reviews >= 5 ? 'star-yellow' : 'star-black'"></fa-icon>
     </ul>
     <div class="card-body card-more-info">
-      <a [routerLink]="product.slug">More info</a>
+        <p class="card-text" [ngClass]="product.stock > 25 ? 'product-stock-status-green' : (product.stock < 25 && product.stock > 10) ? 'product-stock-status-orange' : 'product-stock-status-red'" >Disponibilità: {{product.stock}}</p>
+        <a [routerLink]="product.slug">More info</a>
     </div>
   </div>
-
 </div>
+
+
 

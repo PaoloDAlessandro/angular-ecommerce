@@ -2,11 +2,15 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding: 8vh 0;
+  background-color: #F3F7F9;
 }
 
 .product-card {
-  width: 20% !important;
+  width: 22% !important;
+  max-width: 380px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  margin: 0 10px 8vh 10px;
 }
 
 .product-image {
@@ -19,14 +23,18 @@
 .card-resize {
   height: 280px;
   padding: 10px 0;
+  object-fit: contain;
 }
 
 .card-more-info {
   display: flex;
-  text-align: right;
   margin-right: 0.8vh;
-  justify-content: flex-end;
-  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-more-info p {
+  margin: 0;
 }
 
 .card-more-info a {
@@ -55,4 +63,16 @@
 
 .star-black {
   color: black;
+}
+
+.product-stock-status-green {
+  color: green;
+}
+
+.product-stock-status-orange {
+  color: orange;
+}
+
+.product-stock-status-red {
+  color: red;
 }
