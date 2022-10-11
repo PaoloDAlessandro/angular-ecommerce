@@ -23,6 +23,7 @@ export class ProductsService {
 
 
   constructor() {
+    this._cart.push({code:"002", name:"MacBook Pro 2021", category:"laptop", description:"The blazing-fast M1 Pro or M1 max chip for groundbreaking performance and amazing battery life. A Stunning Liquid Retina XDR display and all the ports you need. This is the notebook you've been waiting for.", slug:"macbookpro-2021", photo:"macbookpro.jpeg", price:"2549.00", stock:7, reviews:5})
   }
 
   addToCart(product:Product) {

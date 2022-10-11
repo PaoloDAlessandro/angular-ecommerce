@@ -1,3 +1,27 @@
-<ul *ngFor="let product of userCart">
-  <li>{{product.name}}</li>
-</ul>
+
+<div class="cart-container" *ngFor="let product of userCart">
+  <div class="cart-card">
+    <div class="cart-card-info cart-product-image">
+      <img [src]="'/assets/images/' + product?.photo" alt="">
+    </div>
+    <div class="cart-card-info cart-product-name">
+      <p>{{product.name}}</p>
+    </div>
+    <div class="cart-card-info cart-edit-stock">
+      <button (click)="decreaseStock(product.slug)">-</button>
+      <input type="text" [(ngModel)]="product.stock">
+      <button (click)="increaseStock(product.slug)">+</button>
+    </div>
+
+    <div class="cart-card-info cart-product-price">
+      <p><b>{{product.price + '$'}}</b></p>
+    </div>
+
+    <div class="cart-card-info cart-product-delete">
+      <button>
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </button>
+    </div>
+
+  </div>
+</div>
