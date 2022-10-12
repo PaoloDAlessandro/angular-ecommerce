@@ -1,9 +1,14 @@
+<div class="background-gray">
 
-<div class="cart-container" *ngFor="let product of userCart">
-  <div class="cart-card">
-    <div class="cart-card-info cart-product-image">
-      <img [src]="'/assets/images/' + product?.photo" alt="">
-    </div>
+
+  <div class="cart-container">
+      <div class="cart-card" *ngFor="let product of userCart">
+        <a [routerLink]= "'/products/' + product.slug">
+
+          <div class="cart-card-info cart-product-image">
+            <img [src]="'/assets/images/' + product?.photo" [alt]="product.slug">
+          </div>
+        </a>
     <div class="cart-card-info cart-product-name">
       <p>{{product.name}}</p>
     </div>
@@ -14,14 +19,16 @@
     </div>
 
     <div class="cart-card-info cart-product-price">
-      <p><b>{{product.price + '$'}}</b></p>
+      <p><b>{{'$' + product.price}}</b></p>
     </div>
 
     <div class="cart-card-info cart-product-delete">
-      <button>
+      <button (click)="onDeleteFromCart(product.slug)">
         <fa-icon [icon]="faTrash"></fa-icon>
       </button>
     </div>
 
   </div>
+</div>
+
 </div>

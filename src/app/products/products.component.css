@@ -1,8 +1,28 @@
+.background-gray {
+  background-color: #F3F7F9;
+}
+
+.input-container {
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+}
+
+.input-container input {
+  width: 100%;
+  border-radius: .375rem;
+  border: 0;
+  outline-color:#0E6EFD;
+  padding: 6px 12px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
 .product-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 8vh 0;
+  padding: 6vh 0;
   background-color: #F3F7F9;
 }
 
@@ -52,9 +72,12 @@
 
 .card-product-reviews {
   display: flex;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 10px 0;
+  padding: 20px 0 0 0;
 }
 
 .star-yellow {
@@ -75,4 +98,10 @@
 
 .product-stock-status-red {
   color: red;
+}
+
+.temp {
+  width: 20%;
+  min-width: 340px;
+  margin: 0 20px;
 }

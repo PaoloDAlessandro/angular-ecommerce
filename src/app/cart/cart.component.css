@@ -1,3 +1,8 @@
+.background-gray {
+  background-color: #F3F7F9;
+  height: 92.4vh;
+}
+
 .cart-container {
   background-color:#F3F7F9;
   padding: 100px 0;
@@ -11,6 +16,7 @@
   background-color: white;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 60px;
   border-radius: 12px;
   justify-content: center;
   padding: 20px 0px;

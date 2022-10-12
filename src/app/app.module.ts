@@ -16,6 +16,7 @@ import { PaginaNonTrovataComponent } from './pagina-non-trovata/pagina-non-trova
 import { ProductComponent } from './product/product.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartComponent } from './cart/cart.component';
+import { NameShorterPipe } from './name-shorter.pipe';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CartComponent } from './cart/cart.component';
     HomeComponent,
     PaginaNonTrovataComponent,
     ProductComponent,
-    CartComponent
+    CartComponent,
+    NameShorterPipe
   ],
   imports: [
     BrowserModule,

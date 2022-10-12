@@ -28,6 +28,14 @@ export class CartComponent implements OnInit {
     if(this.searchInUserCart(slug)!.stock > 0) this.searchInUserCart(slug)!.stock = Number(this.searchInUserCart(slug)!.stock) + 1
   }
 
+  onDeleteFromCart(slug: string) {
+    console.log(slug);
+    this.productService.removeFromCart(this.searchInUserCart(slug) as Product)
+    console.log(this.productService.cart);
+    this.userCart = this.productService.cart
+
+  }
+
   searchInUserCart(slug: string) {
     return this.userCart.find(p => p.slug === slug)
   }

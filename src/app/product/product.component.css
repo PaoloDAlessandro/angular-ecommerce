@@ -15,5 +15,11 @@
 
 .product-image-resize {
   max-height: 500px;
-  object-fit: contain;  
+  object-fit: contain;
+}
+
+.card-resize {
+  height: 180px;
+  padding: 14px 20px 0 20px;
+  object-fit: contain;
 }
