@@ -21,7 +21,7 @@ export class ProductComponent implements OnInit, OnChanges {
   constructor(private route: ActivatedRoute, private productService: ProductsService, private router: Router) {
     const { slug } = route?.snapshot.params ?? {}
     this.product =  productService.searchProduct(slug)
-    this.relatedProducts = productService.searchByCategoryProduct(this.product?.category as String)
+    this.relatedProducts = productService.searchByCategoryProduct(this.product?.category as String, this.product?.name as String)
 
   }
 
@@ -29,6 +29,7 @@ export class ProductComponent implements OnInit, OnChanges {
     this.route.url.subscribe(url => {
       const { slug } = this.route.snapshot.params ?? {}
       this.product = this.productService.searchProduct(slug)
+      this.relatedProducts = this.productService.searchByCategoryProduct(this.product?.category as String, this.product?.name as String)
     })
   }
 
