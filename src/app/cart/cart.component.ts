@@ -23,16 +23,18 @@ export class CartComponent implements OnInit {
 
   decreaseStock(slug: string) {
     if(this.searchInUserCart(slug)!.stock > 0) this.searchInUserCart(slug)!.stock = Number(this.searchInUserCart(slug)!.stock) - 1
+    if(this.searchInUserCart(slug)!.stock == 0) {
+      this.productService.removeFromCart(this.searchInUserCart(slug) as Product)
+      this.userCart = this.productService.cart
+    }
   }
-  
+
   increaseStock(slug: string) {
     if(this.searchInUserCart(slug)!.stock > 0) this.searchInUserCart(slug)!.stock = Number(this.searchInUserCart(slug)!.stock) + 1
   }
 
   onDeleteFromCart(slug: string) {
-    console.log(slug);
     this.productService.removeFromCart(this.searchInUserCart(slug) as Product)
-    console.log(this.productService.cart);
     this.userCart = this.productService.cart
 
   }

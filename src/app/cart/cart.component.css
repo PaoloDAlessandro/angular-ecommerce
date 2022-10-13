@@ -1,6 +1,6 @@
 .background-gray {
   background-color: #F3F7F9;
-  height: 92.4vh;
+  min-height: 92.4vh;
 }
 
 .cart-container {
@@ -63,6 +63,7 @@
 .cart-product-image img {
   height: 180px;
   object-fit: contain;
+  max-width: 200px;
 }
 
 .cart-product-delete button {
