@@ -43,3 +43,7 @@
 .mb-0 fa-icon {
   color: rgb(0, 136, 20);
 }
+
+.mb-5 {
+  min-width: 340px;
+}
