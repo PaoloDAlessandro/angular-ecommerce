@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Product } from '../dati/product.data';
 import { ProductsService } from '../products.service';
 import { NameShorterPipe } from '../name-shorter.pipe';
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -15,6 +16,10 @@ export class ProductComponent implements OnInit, OnChanges {
   product?:Product
   subscription?:Subscription
   quantity: Number = 1
+
+  faCircleCheck = faCircleCheck
+
+  addToCartStatus = false
 
   relatedProducts: Product[] = []
 
@@ -46,6 +51,11 @@ export class ProductComponent implements OnInit, OnChanges {
     }
     this.productService.addToCart(this.productCart as Product)
     console.log(this.productService.cart);
-
+    this.addToCartStatus = true
   }
+
+  disableModal() {
+    this.addToCartStatus = false
+  }
+
 }

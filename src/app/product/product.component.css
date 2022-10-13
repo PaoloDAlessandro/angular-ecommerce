@@ -23,3 +23,23 @@
   padding: 14px 20px 0 20px;
   object-fit: contain;
 }
+
+.position-absolute {
+  position: absolute;
+  top:80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-background {
+  position: absolute;
+  top:0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+}
+
+.mb-0 fa-icon {
+  color: rgb(0, 136, 20);
+}

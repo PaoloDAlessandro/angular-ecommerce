@@ -24,6 +24,7 @@ export class CartComponent implements OnInit {
   decreaseStock(slug: string) {
     if(this.searchInUserCart(slug)!.stock > 0) this.searchInUserCart(slug)!.stock = Number(this.searchInUserCart(slug)!.stock) - 1
   }
+  
   increaseStock(slug: string) {
     if(this.searchInUserCart(slug)!.stock > 0) this.searchInUserCart(slug)!.stock = Number(this.searchInUserCart(slug)!.stock) + 1
   }

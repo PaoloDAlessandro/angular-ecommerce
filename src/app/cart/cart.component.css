@@ -20,6 +20,7 @@
   border-radius: 12px;
   justify-content: center;
   padding: 20px 0px;
+  border: 1px solid rgba(49, 47, 47, 0.3);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
@@ -56,6 +57,7 @@
 }
 
 .cart-product-image {
+  text-align: center;
 }
 
 .cart-product-image img {
@@ -72,4 +74,19 @@
 
 .cart-product-delete button:hover {
   color: #DC4B64;
+}
+
+.cart-payment {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+}
+
+.b-white {
+  background-color: white;
+}
+
+.cart-empty-spacer {
+  height: 20px;
 }
