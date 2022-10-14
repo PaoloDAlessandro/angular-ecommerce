@@ -1,5 +1,5 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, NgForm, Validators } from '@angular/forms';
 import { Product } from '../dati/product.data';
 import { ProductsService } from '../products.service';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';

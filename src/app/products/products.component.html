@@ -8,7 +8,9 @@
 
     <div *ngFor="let product of products" class="mb-5 temp">
       <div class="card h-100">
+        <a [routerLink]="product.slug">
           <img class="card-img-top card-resize" [src]="'/assets/images/' + product.photo" alt="...">
+        </a>
           <div class="card-body p-4">
               <div class="text-center">
                   <h5 class="fw-bolder">{{ product.name }}</h5>

@@ -146,11 +146,11 @@
               <label for="zip" class="form-label">Zip</label>
               <input
                 ngModel
-                type="text"
+                type="number"
                 class="form-control"
                 id="zip"
-                minlength="5"
-                maxlength="5"
+                min="10000"
+                max="99999"
                 name="zip"
                 placeholder=""
                 #zip="ngModel"
@@ -192,9 +192,9 @@
               <input
                 ngModel
                 name="cardNumber"
-                type="text"
-                minlength="15"
-                maxlength="19"
+                type="number"
+                min="100000000000000"
+                max="9999999999999999999"
                 class="form-control"
                 id="cardNumber"
                 #cardNumber="ngModel"
@@ -227,10 +227,10 @@
               <input
                 ngModel
                 name="cvv"
-                type="text"
+                type="number"
                 class="form-control"
-                minlength="3"
-                maxlength="3"
+                min="100"
+                max="999"
                 id="cc-cvv"
                 #cvv="ngModel"
                 required
@@ -258,7 +258,7 @@
       <div class="modal-content rounded-3 shadow">
         <div class="modal-body p-4 text-center">
           <h5 class="mb-0"><fa-icon [icon]="faCircleCheck"></fa-icon>&nbsp; Order confirmed!</h5>
-          <p class="mb-0">Your order will be delivered in 5 works days</p>
+          <p class="mb-0">Your order will be delivered in 5 work days</p>
         </div>
         <div class="modal-footer flex-nowrap p-0">
           <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 fix-button-modal" data-bs-dismiss="modal" routerLink="/cart">Cart</button>
