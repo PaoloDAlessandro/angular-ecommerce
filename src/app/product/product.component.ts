@@ -28,6 +28,10 @@ export class ProductComponent implements OnInit {
     this.product =  productService.searchProduct(slug)
     this.relatedProducts = productService.searchByCategoryProduct(this.product?.category as String, this.product?.name as String)
 
+    if (this.product === undefined) {
+      router.navigateByUrl("/pagina-non-trovata")
+    }
+
   }
 
   ngOnInit(): void {

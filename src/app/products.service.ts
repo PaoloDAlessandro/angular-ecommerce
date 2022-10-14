@@ -44,6 +44,10 @@ export class ProductsService {
     this._cart = this._cart.filter(p => p !== product)
   }
 
+  cleanCart() {
+    this._cart = []
+  }
+
   searchProductInCart(slug: String) {
     return this._cart.find(p => p.slug === slug)
   }

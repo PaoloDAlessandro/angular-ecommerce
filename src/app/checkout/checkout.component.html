@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="userCart.length > 0">
   <main>
     <div class="py-5 text-center">
       <h2>Cart Checkout</h2>
@@ -31,21 +31,25 @@
           class="needs-validation"
           novalidate=""
           abineguid="2124A13236D94EA19286CC2662DFE479"
-          [formGroup]="checkOutForm"
-          (ngSubmit)="onSubmit()">
+          #f="ngForm"
+          (ngSubmit)="onSubmit(f)"
+
+        >
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">First name</label>
               <input
-                formControlName="firstName"
+                ngModel
+                name="firstNameInput"
                 type="text"
                 class="form-control"
-                id="firstName"
-                placeholder=""
-                value=""
-                required=""
+                id="firstNameInput"
+                minlength="2"
+                maxlength="50"
+                required
+                #firstNameInput="ngModel"
                 >
-              <div class="invalid-feedback">
+              <div class="help-block" *ngIf="!firstNameInput.valid && firstNameInput.touched">
                 Valid first name is required.
               </div>
             </div>
@@ -53,14 +57,17 @@
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Last name</label>
               <input
-                formControlName="lastName"
+                ngModel
+                name="lastName"
                 type="text"
+                minlength="2"
+                maxlength="50"
                 class="form-control"
                 id="lastName"
-                placeholder=""
-                value=""
-                required="">
-              <div class="invalid-feedback">
+                #lastName="ngModel"
+                required
+              >
+              <div class="help-block" *ngIf="!lastName.valid && lastName.touched">
                 Valid last name is required.
               </div>
             </div>
@@ -68,13 +75,17 @@
             <div class="col-12">
               <label for="email" class="form-label">Email</label>
               <input
-                formControlName="email"
+                ngModel
+                name="email"
                 type="email"
+                email
                 class="form-control"
-                id="email"
                 placeholder="you@example.com"
+                id="email"
+                #email="ngModel"
+                required
               >
-              <div class="invalid-feedback">
+              <div class="help-block" *ngIf="!email.valid && email.touched">
                 Please enter a valid email address for shipping updates.
               </div>
             <div id="pwm-inline-icon-82780" class="pwm-field-icon" style="position: absolute !important; width: 18px !important; height: 18px !important; min-height: 0px !important; min-width: 0px !important; z-index: 2147483645 !important; box-shadow: none !important; box-sizing: content-box !important; background: none !important; border: none !important; padding: 0px !important; cursor: pointer !important; outline: none !important; margin-top: -28px; margin-left: 586px;"><svg style="display: inline-block !important; width: 16px !important; height: 16px !important; fill: rgb(230, 0, 23) !important; margin-top: 0.5px !important; position: absolute !important; top: 0px !important; left: 0px !important;" viewBox="0 0 40 64"><g><path d="m20,28.12a33.78,33.78 0 0 1 13.36,2.74a22.18,22.18 0 0 1 0.64,5.32c0,9.43 -5.66,17.81 -14,20.94c-8.34,-3.13 -14,-11.51 -14,-20.94a22.2,22.2 0 0 1 0.64,-5.32a33.78,33.78 0 0 1 13.36,-2.74m0,-28.12c-8.82,0 -14,7.36 -14,16.41l0,5.16c2,-1.2 2,-1.49 5,-2.08l0,-3.08c0,-6.21 2.9,-11.41 8.81,-11.41l0.19,0c6.6,0 9,4.77 9,11.41l0,3.08c3,0.58 3,0.88 5,2.08l0,-5.16c0,-9 -5.18,-16.41 -14,-16.41l0,0zm0,22c-6.39,0 -12.77,0.67 -18.47,4a31.6,31.6 0 0 0 -1.53,9.74c0,13.64 8.52,25 20,28.26c11.48,-3.27 20,-14.63 20,-28.26a31.66,31.66 0 0 0 -1.54,-9.77c-5.69,-3.3 -12.08,-4 -18.47,-4l0,0l0.01,0.03z"></path><path d="m21.23,39.5a2.81,2.81 0 0 0 1.77,-2.59a2.94,2.94 0 0 0 -3,-2.93a3,3 0 0 0 -3,3a2.66,2.66 0 0 0 1.77,2.48l-1.77,4.54l6,0l-1.77,-4.5z"></path></g></svg></div></div>
@@ -82,13 +93,17 @@
             <div class="col-12">
               <label for="address" class="form-label">Address</label>
               <input
-                formControlName="address"
+                ngModel
                 type="text"
+                minlength="5"
                 class="form-control"
                 id="address"
+                name="address"
                 placeholder="1234 Main St"
+                #address="ngModel"
+                required
               >
-              <div class="invalid-feedback">
+              <div class="help-block" *ngIf="!address.valid && address.touched" >
                 Please enter your shipping address.
               </div>
             </div>
@@ -107,9 +122,12 @@
             <div class="col-md-5">
               <label for="country" class="form-label">Country</label>
               <select
-                formControlName="country"
+                ngModel
                 class="form-select"
                 id="country"
+                name="country"
+                #country="ngModel"
+                required=""
               >
                 <option value="">Choose...</option>
                 <option>United States</option>
@@ -119,7 +137,7 @@
                 <option>Germany</option>
                 <option>Netherland</option>
               </select>
-              <div class="invalid-feedback">
+              <div class="help-block" *ngIf="!country.valid && country.touched">
                 Please select a valid country.
               </div>
             </div>
@@ -127,13 +145,18 @@
             <div class="col-md-3">
               <label for="zip" class="form-label">Zip</label>
               <input
-                formControlName="zip"
+                ngModel
                 type="text"
                 class="form-control"
                 id="zip"
+                minlength="5"
+                maxlength="5"
+                name="zip"
                 placeholder=""
+                #zip="ngModel"
+                required
               >
-              <div class="invalid-feedback">
+              <div class="help-block" *ngIf="!zip.valid && zip.touched">
                 Zip code required.
               </div>
             </div>
@@ -148,14 +171,18 @@
             <div class="col-md-6">
               <label for="cc-name" class="form-label">Name on card</label>
               <input
-                formControlName="nameOnCard"
+                ngModel
+                name="nameOnCard"
                 type="text"
                 class="form-control"
+                minlength="2"
                 id="cc-name"
                 placeholder=""
+                #nameOnCard="ngModel"
+                required=""
               >
               <small class="text-muted">Full name as displayed on card</small>
-              <div class="invalid-feedback">
+              <div class="help-block" *ngIf="!nameOnCard.valid && nameOnCard.touched">
                 Name on card is required
               </div>
             </div>
@@ -163,13 +190,17 @@
             <div class="col-md-6">
               <label for="cc-number" class="form-label">Credit card number</label>
               <input
-                formControlName="cardNumber"
+                ngModel
+                name="cardNumber"
                 type="text"
+                minlength="15"
+                maxlength="19"
                 class="form-control"
-                id="cc-number"
-                placeholder=""
+                id="cardNumber"
+                #cardNumber="ngModel"
+                required
               >
-              <div class="invalid-feedback">
+              <div class="help-block" *ngIf="!cardNumber.valid && cardNumber.touched">
                 Credit card number is required
               </div>
             </div>
@@ -177,13 +208,16 @@
             <div class="col-md-3">
               <label for="cc-expiration" class="form-label">Expiration</label>
               <input
-                formControlName="expirationDate"
-                type="text"
+                ngModel
+                name="expiration"
+                type="month"
                 class="form-control"
                 id="cc-expiration"
                 placeholder=""
+                #expiration="ngModel"
+                required
               >
-              <div class="invalid-feedback">
+              <div class="help-block" *ngIf="!expiration.valid && expiration.touched">
                 Expiration date required
               </div>
             </div>
@@ -191,13 +225,17 @@
             <div class="col-md-3">
               <label for="cc-cvv" class="form-label">CVV</label>
               <input
-                formControlName="cvv"
+                ngModel
+                name="cvv"
                 type="text"
                 class="form-control"
+                minlength="3"
+                maxlength="3"
                 id="cc-cvv"
-                placeholder=""
+                #cvv="ngModel"
+                required
               >
-              <div class="invalid-feedback">
+              <div class="help-block" *ngIf="!cvv.valid && cvv.touched">
                 Security code required
               </div>
             </div>
@@ -205,7 +243,7 @@
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" [disabled]="!checkOutForm.valid" type="submit">Continue to checkout</button>
+          <button class="w-100 btn btn-primary btn-lg" [disabled]="!f.valid" type="submit">Continue to checkout</button>
         </form>
       </div>
     </div>
@@ -213,4 +251,38 @@
 </div>
 
 
-<div class="spacer"></div>
+<div class="modal-background" *ngIf="formSubmit">
+
+  <div class="modal modal-alert position-static d-block py-5 position-absolute" tabindex="-1" role="dialog" id="modalChoice">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-3 shadow">
+        <div class="modal-body p-4 text-center">
+          <h5 class="mb-0"><fa-icon [icon]="faCircleCheck"></fa-icon>&nbsp; Order confirmed!</h5>
+          <p class="mb-0">Your order will be delivered in 5 works days</p>
+        </div>
+        <div class="modal-footer flex-nowrap p-0">
+          <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 fix-button-modal" data-bs-dismiss="modal" routerLink="/cart">Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="background-gray" *ngIf="userCart.length == 0">
+
+  <div class="empty-cart">
+    <div class="px-4 py-5 my-5 fix-cart-empty-margin text-center">
+      <div class="cart-empty-spacer-big"></div>
+      <h1 class="display-5 fw-bold">Cart is empty :(</h1>
+      <div class="cart-empty-spacer"></div>
+      <div class="col-lg-6 mx-auto">
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button type="button" class="btn btn-primary btn-lg px-4 gap-3" routerLink="/products">Start shopping</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="spacer" *ngIf="userCart.length > 0"></div>

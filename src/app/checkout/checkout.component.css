@@ -7,3 +7,53 @@
 .spacer {
   height: 80px;
 }
+
+.help-block {
+  color: red;
+}
+
+
+.position-absolute {
+  position: absolute;
+  top:80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-background {
+  position: absolute;
+  top:0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 120vh;
+  width: 100%;
+}
+
+.mb-0 fa-icon {
+  color: rgb(0, 136, 20);
+}
+
+.mb-5 {
+  min-width: 315px;
+}
+
+.fix-button-modal {
+  width: 100%;
+}
+
+.cart-empty-spacer {
+  height: 20px;
+}
+
+.cart-empty-spacer-big {
+  height: 200px;
+}
+
+.background-gray {
+  background-color: #F3F7F9;
+  min-height: 92.4vh;
+}
+
+.fix-cart-empty-margin {
+  margin-top: 0!important;
+}

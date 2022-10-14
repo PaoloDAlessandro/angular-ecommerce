@@ -1,40 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, DoCheck, OnInit } from '@angular/core';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Product } from '../dati/product.data';
 import { ProductsService } from '../products.service';
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
-export class CheckoutComponent implements OnInit {
+export class CheckoutComponent implements OnInit, DoCheck {
 
   userCart :Product[] = []
   total :number = 0
+  faCircleCheck = faCircleCheck
 
-  checkOutForm: FormGroup
-
-  firstName = ""
+  formSubmit: boolean = false
 
   constructor(private productsService :ProductsService) {
     this.userCart = this.productsService.cart
     this.cartTotal()
-    this.checkOutForm = new FormGroup({
-      "firstName": new FormControl("Pippo", Validators.required),
-      "lastName": new FormControl(null, Validators.required),
-      "email": new FormControl(null, [Validators.required, Validators.email]),
-      "address": new FormControl(null, Validators.required),
-      "country": new FormControl(null, Validators.required),
-      "zip": new FormControl(null, Validators.required),
-      "nameOnCard": new FormControl(null, Validators.required),
-      "cardNumber": new FormControl(null, [Validators.required, Validators.minLength(15), Validators.maxLength(19)]),
-      "expirationDate": new FormControl(null, Validators.required),
-      "cvv": new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(3)]),
-    })
    }
 
   ngOnInit(): void {
+  }
+
+  ngDoCheck(): void {
+
   }
 
   cartTotal() {
@@ -44,9 +36,9 @@ export class CheckoutComponent implements OnInit {
     this.total = Number(this.total.toFixed(2))
   }
 
-  onSubmit() {
-    console.log(this.checkOutForm);
-
+  onSubmit(ngForm: NgForm) {
+    this.formSubmit = true
+    this.productsService.cleanCart()
   }
 
 }

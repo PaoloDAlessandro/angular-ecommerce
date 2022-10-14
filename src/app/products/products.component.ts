@@ -28,9 +28,6 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  filterProduct() {
-
-  }
 
   searchProduct() {
     this.products = this.productsService.products.filter(p => p.name.toLowerCase().indexOf(this.name.toLowerCase()) != -1)
