@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product } from '../dati/product.data';
@@ -10,7 +10,7 @@ import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit, OnChanges {
+export class ProductComponent implements OnInit {
 
   productCart?:Product
   product?:Product
@@ -38,14 +38,7 @@ export class ProductComponent implements OnInit, OnChanges {
     })
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.product?.name);
-
-  }
-
   onAddToCartCall() {
-    console.log(this.quantity);
-
     if (this.product != undefined) {
       this.productCart = {code: this.product.code, name: this.product?.name, category: this.product.category, slug: this.product.slug, description: this.product.description, price: this.product.price, photo: this.product.photo, stock:this.quantity, reviews: this.product.reviews }
     }
