@@ -13,7 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartComponent } from './cart/cart.component';
 import { NameShorterPipe } from './name-shorter.pipe';
 import { CheckoutComponent } from './checkout/checkout.component';
-
+import { ProductSearch } from './product-search.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ProductComponent,
     CartComponent,
     NameShorterPipe,
-    CheckoutComponent
+    CheckoutComponent,
+    ProductSearch,
   ],
   imports: [
     BrowserModule,

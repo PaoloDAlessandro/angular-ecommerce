@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { faBoxOpen } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { ProductSearch } from '../product-search.pipe';
 
 @Component({
   selector: 'app-products',
@@ -28,9 +29,10 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  /*
   searchProduct() {
     this.products = this.productsService.products.filter(p => p.name.toLowerCase().indexOf(this.name.toLowerCase()) != -1)
   }
+  */
 
 }
