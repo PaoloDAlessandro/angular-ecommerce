@@ -22,7 +22,10 @@ export class CartComponent implements OnInit {
   }
 
   decreaseStock(slug: string) {
-    if(this.searchInUserCart(slug)!.stock > 0) this.searchInUserCart(slug)!.stock = Number(this.searchInUserCart(slug)!.stock) - 1
+    if(this.searchInUserCart(slug)!.stock > 0) {
+      this.searchInUserCart(slug)!.stock = Number(this.searchInUserCart(slug)!.stock) - 1
+      this.productService.searchProduct(slug)!.stock =  Number(this.productService.searchProduct(slug)?.stock) + 1
+    }
     if(this.searchInUserCart(slug)!.stock == 0) {
       this.productService.removeFromCart(this.searchInUserCart(slug) as Product)
       this.userCart = this.productService.cart
@@ -30,10 +33,18 @@ export class CartComponent implements OnInit {
   }
 
   increaseStock(slug: string) {
-    if(this.searchInUserCart(slug)!.stock > 0) this.searchInUserCart(slug)!.stock = Number(this.searchInUserCart(slug)!.stock) + 1
+    if(this.searchInUserCart(slug)!.stock > 0) {
+      if(this.productService.searchProduct(slug)!.stock != 0) {
+        this.searchInUserCart(slug)!.stock = Number(this.searchInUserCart(slug)!.stock) + 1
+        this.productService.searchProduct(slug)!.stock =  Number(this.productService.searchProduct(slug)?.stock) - 1
+      }
+    }
   }
 
   onDeleteFromCart(slug: string) {
+    this.productService.searchProduct(slug)!.stock = Number(this.productService.searchProduct(slug)!.stock) + Number(this.searchInUserCart(slug)!.stock)
+
+    this.searchInUserCart(slug) as Product
     this.productService.removeFromCart(this.searchInUserCart(slug) as Product)
     this.userCart = this.productService.cart
 

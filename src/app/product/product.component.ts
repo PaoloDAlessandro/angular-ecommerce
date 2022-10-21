@@ -19,6 +19,7 @@ export class ProductComponent implements OnInit {
 
   faCircleCheck = faCircleCheck
 
+  availability = true
   addToCartStatus = false
 
   relatedProducts: Product[] = []
@@ -46,9 +47,20 @@ export class ProductComponent implements OnInit {
     if (this.product != undefined) {
       this.productCart = {code: this.product.code, name: this.product?.name, category: this.product.category, slug: this.product.slug, description: this.product.description, price: this.product.price, photo: this.product.photo, stock:this.quantity, reviews: this.product.reviews }
     }
-    this.productService.addToCart(this.productCart as Product)
-    console.log(this.productService.cart);
-    this.addToCartStatus = true
+    if(this.quantity <= this.productService.searchProduct(this.product?.slug as String)!.stock) {
+      this.productService.addToCart(this.productCart as Product)
+      this.productService.searchProduct(this.product?.slug as String)!.stock =  Number(this.productService.searchProduct(this.product?.slug as String)?.stock) - Number(this.quantity)
+      this.addToCartStatus = true
+    }
+  }
+
+  onQuantityChange() {
+    if(this.quantity <= this.productService.searchProduct(this.product?.slug as String)!.stock) {
+      this.availability = true
+    }
+    else {
+      this.availability = false
+    }
   }
 
   disableModal() {
