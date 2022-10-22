@@ -91,3 +91,15 @@
 .cart-empty-spacer {
   height: 20px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .cart-card {
+    flex-direction: column;
+    height: 400px;
+    justify-content: space-between;
+  }
+  .cart-card-info {
+    width: auto;
+  }
+}
