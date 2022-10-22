@@ -110,4 +110,9 @@
   .input-mobile {
     width: 60%;
   }
+
+  .input-container input {
+    border: 1px solid rgba(27, 31, 35, 0.15);
+  }
+
 }

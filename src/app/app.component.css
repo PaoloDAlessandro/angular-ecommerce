@@ -16,3 +16,16 @@
   background-color: #202529;
   margin-top: 0 !important;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .mobile-nav-ul {
+    margin-bottom: 0 !important;
+    width: auto !important;
+  }
+  
+  footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
