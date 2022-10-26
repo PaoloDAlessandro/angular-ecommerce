@@ -4,11 +4,11 @@
   <div class="cart-container">
       <div class="cart-card" *ngFor="let product of userCart">
         <div class="cart-card-info">
-          <a [routerLink]= "'/products/' + product.slug">
-            <div class="cart-card-info cart-product-image">
+          <div class="cart-card-info cart-product-image">
+              <a [routerLink]= "'/products/' + product.slug">
               <img [src]="'/assets/images/' + product?.photo" [alt]="product.slug">
+            </a>
             </div>
-          </a>
         </div>
     <div class="cart-card-info cart-product-name">
       <p>{{product.name}}</p>
@@ -31,7 +31,8 @@
 
   </div>
 
-  <div class="cart-payment" *ngIf="userCart.length > 0">
+  <div class="cart-actions" *ngIf="userCart.length > 0">
+    <button class="btn btn-outline-dark mt-auto b-white" (click)="clearCart()">Clear cart</button>
     <a class="btn btn-outline-dark mt-auto b-white" routerLink="/checkout" >Go to payment</a>
   </div>
 </div>

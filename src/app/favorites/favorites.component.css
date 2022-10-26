@@ -213,6 +213,39 @@
   height: 20px;
 }
 
+.favorites {
+  outline: none;
+  border: 1px solid #212529;
+  border-radius: 0.375rem;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  margin-left: 1rem;
+  transition: .2s;
+}
+
+.empty-favorites {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -38%);
+}
+
+.flex-card {
+  display: flex;
+  justify-content: center;
+}
+
+.favorites:hover {
+  transition: .2s;
+  background-color: #212529;
+}
+
+.favorites:hover fa-icon {
+  transition: .2s;
+  color: white;
+}
+
 
 @media only screen and (max-width: 600px) {
   .cart-card {

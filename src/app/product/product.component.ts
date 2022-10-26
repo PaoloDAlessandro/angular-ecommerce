@@ -36,7 +36,6 @@ export class ProductComponent implements OnInit {
     this.product =  productService.searchProduct(slug)
     this.relatedProducts = productService.searchByCategoryProduct(this.product?.category as String, this.product?.name as String)
     this.favoritesStatus = this.favoriteService.checkFavorites(this.product as Product)
-
     if (this.product === undefined) {
       router.navigateByUrl("/pagina-non-trovata")
     }
@@ -48,6 +47,7 @@ export class ProductComponent implements OnInit {
       const { slug } = this.route.snapshot.params ?? {}
       this.product = this.productService.searchProduct(slug)
       this.relatedProducts = this.productService.searchByCategoryProduct(this.product?.category as String, this.product?.name as String)
+      this.favoritesStatus = this.favoriteService.checkFavorites(this.product as Product)
     })
   }
 

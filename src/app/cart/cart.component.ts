@@ -50,6 +50,11 @@ export class CartComponent implements OnInit {
 
   }
 
+  clearCart() {
+    this.productService.cleanCart()
+    this.userCart = this.productService.cart
+  }
+
   searchInUserCart(slug: string) {
     return this.userCart.find(p => p.slug === slug)
   }

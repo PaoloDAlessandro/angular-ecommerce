@@ -1,3 +1,16 @@
+<div class="empty-favorites" *ngIf="favoriteProducts.length === 0">
+  <div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">You don't even like a product :(</h1>
+    <div class="cart-empty-spacer"></div>
+    <div class="col-lg-6 mx-auto">
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3" routerLink="/products">Start shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="product-container">
   <div *ngFor="let product of favoriteProducts" class="mb-5 temp">
     <div class="card">
@@ -18,20 +31,11 @@
 
             </div>
         </div>
-        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent flex-card">
             <div class="text-center"><a class="btn btn-outline-dark mt-auto" [routerLink]="'/products/' + product.slug">View details</a></div>
-        </div>
-    </div>
-
-
-    <div class="empty-cart" *ngIf="favoriteProducts.length == 0">
-      <div class="px-4 py-5 my-5 text-center">
-        <h1 class="display-5 fw-bold">Cart is empty :(</h1>
-        <div class="cart-empty-spacer"></div>
-        <div class="col-lg-6 mx-auto">
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" class="btn btn-primary btn-lg px-4 gap-3" routerLink="/products">Start shopping</button>
+            <button class="favorites" (click)="removeFromFavorites(product)">
+              <fa-icon [icon]="faFullHeart"></fa-icon>
+            </button>
           </div>
-        </div>
-      </div>
     </div>
+

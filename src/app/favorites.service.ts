@@ -15,7 +15,7 @@ export class FavoritesService {
   }
 
   removeToFavorites(product: Product) {
-    this._favoritesProducts = this._favoritesProducts.filter(p => p != p)
+    this._favoritesProducts = this._favoritesProducts.filter(p => p !== product)
   }
 
   checkFavorites(product: Product) {
