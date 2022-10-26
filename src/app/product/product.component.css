@@ -60,6 +60,26 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.favorites {
+  outline: none;
+  border: 1px solid #212529;
+  border-radius: 0.375rem;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  margin-left: 1rem;
+  transition: .2s;
+}
+
+.favorites:hover {
+  transition: .2s;
+  background-color: #212529;
+}
+
+.favorites:hover fa-icon {
+  transition: .2s;
+  color: white;
+}
 
 @media only screen and (max-width: 600px) {
   .product-image-resize {

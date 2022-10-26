@@ -14,6 +14,7 @@ import { CartComponent } from './cart/cart.component';
 import { NameShorterPipe } from './name-shorter.pipe';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductSearch } from './product-search.pipe';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProductSearch } from './product-search.pipe';
     NameShorterPipe,
     CheckoutComponent,
     ProductSearch,
+    FavoritesComponent,
   ],
   imports: [
     BrowserModule,

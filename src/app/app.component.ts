@@ -3,6 +3,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,8 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
 
   faCartShopping = faCartShopping
+  faHeart = faHeart
 
   constructor(private route :ActivatedRoute, private router: Router) {
-    console.log(router.url);
-
-
   }
 }

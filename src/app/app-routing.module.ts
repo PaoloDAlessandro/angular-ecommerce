@@ -7,6 +7,7 @@ import { PaginaNonTrovataComponent } from './pagina-non-trovata/pagina-non-trova
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"products/:slug", component:ProductComponent},
   {path:"cart", component:CartComponent},
   {path:"checkout", component:CheckoutComponent},
+  {path:"favorites", component: FavoritesComponent},
   {path:"pagina-non-trovata", component:PaginaNonTrovataComponent},
   {path:"**", redirectTo:"pagina-non-trovata"},
 ];

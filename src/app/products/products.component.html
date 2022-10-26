@@ -6,7 +6,7 @@
 
 <div class="product-container">
     <div *ngFor="let product of products! | productSearch:name" class="mb-5 temp">
-      <div class="card h-100">
+      <div class="card">
         <a [routerLink]="product.slug">
           <img class="card-img-top card-resize" [src]="'/assets/images/' + product.photo" alt="...">
         </a>
