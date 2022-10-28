@@ -40,6 +40,9 @@ export class ProductComponent implements OnInit {
       router.navigateByUrl("/pagina-non-trovata")
     }
 
+    //avoid page starting at a wrong position
+    window.scrollBy(0, 0)
+
   }
 
   ngOnInit(): void {

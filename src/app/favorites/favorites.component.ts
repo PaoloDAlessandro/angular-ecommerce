@@ -15,6 +15,8 @@ export class FavoritesComponent implements OnInit {
   faFullHeart = faFullHeart
   faStar = faStar
 
+  research :string = ""
+
   constructor(private favoriteService: FavoritesService) {
     this.favoriteProducts = favoriteService.favorites
   }

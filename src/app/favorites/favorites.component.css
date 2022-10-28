@@ -246,6 +246,10 @@
   color: white;
 }
 
+.fix-position {
+  min-height: 0 !important;
+}
+
 
 @media only screen and (max-width: 600px) {
   .cart-card {

@@ -10,9 +10,15 @@
   </div>
 </div>
 
+<div class="background-gray fix-position" *ngIf="favoriteProducts.length != 0">
+  <div class="input-container input-mobile">
+    <input type="text" [(ngModel)]="research" placeholder="Search a product">
+  </div>
+</div>
+
 
 <div class="product-container">
-  <div *ngFor="let product of favoriteProducts" class="mb-5 temp">
+  <div *ngFor="let product of favoriteProducts | favoriteSearch:research" class="mb-5 temp">
     <div class="card">
       <a [routerLink]="'/products/' + product.slug">
         <img class="card-img-top card-resize" [src]="'/assets/images/' + product.photo" alt="...">
