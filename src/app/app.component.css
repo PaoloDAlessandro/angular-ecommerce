@@ -15,6 +15,14 @@
 .background-dark {
   background-color: #202529;
   margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 
@@ -23,7 +31,7 @@
     margin-bottom: 0 !important;
     width: auto !important;
   }
-  
+
   footer {
     flex-direction: column;
     justify-content: center;

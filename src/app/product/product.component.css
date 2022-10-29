@@ -32,7 +32,7 @@
 }
 
 .modal-background {
-  position: absolute;
+  position: fixed;
   top:0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -84,6 +84,20 @@ input[type=number] {
 @media only screen and (max-width: 600px) {
   .product-image-resize {
     width: 100% !important;
+    max-width: 200px;
     min-width: 0 !important;
   }
+
+  .img-center {
+    text-align: center;
+  }
+
+  .mobile-text-left {
+    text-align: left;
+  }
+
+  .background-white {
+    width: 90%;
+  }
+
 }

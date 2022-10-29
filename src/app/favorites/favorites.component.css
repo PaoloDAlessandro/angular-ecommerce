@@ -229,6 +229,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -38%);
+  width: 100%;
 }
 
 .flex-card {

@@ -43,6 +43,10 @@ export class ProductComponent implements OnInit {
     //avoid page starting at a wrong position
     window.scrollBy(0, 0)
 
+    window.onscroll = function() {
+      window.scrollBy(0,0)
+    }
+
   }
 
   ngOnInit(): void {
@@ -55,6 +59,7 @@ export class ProductComponent implements OnInit {
   }
 
   onAddToCartCall() {
+
     if (this.product != undefined) {
       this.productCart = {code: this.product.code, name: this.product?.name, category: this.product.category, slug: this.product.slug, description: this.product.description, price: this.product.price, photo: this.product.photo, stock:this.quantity, reviews: this.product.reviews }
     }
