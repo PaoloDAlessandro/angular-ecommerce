@@ -1,28 +1,28 @@
-<div class="background-gray">
-  <section class="py-5 background-white">
+<div class="background-gray" [ngClass]="getThemeMode() ? 'back-dark_mode' : ''">
+  <section class="py-5 background-white" [ngClass]="getThemeMode() ? 'container-dark_mode' : ''">
     <div class="container px-4 px-lg-5 my-5">
       <div class="row gx-4 gx-lg-5 align-items-center">
         <div class="col-md-6 img-center"><img class="card-img-top mb-5 mb-md-0 product-image-resize" [src]="'/assets/images/' + product?.photo" alt="..."></div>
         <div class="col-md-6">
-          <div class="small mb-1">Category: {{ product?.category }}</div>
-          <h1 class="display-5 fw-bolder">{{ product?.name}}</h1>
+          <div class="small mb-1" [ngClass]="getThemeMode() ? 'product-category-dark_mode' : ''">Category: {{ product?.category }}</div>
+          <h1 class="display-5 fw-bolder" [ngClass]="getThemeMode() ? 'product-title-dark_mode' : ''">{{ product?.name}}</h1>
           <div class="fs-5 mb-5">
             <!-- <span class="text-decoration-line-through">$45.00</span> -->
-            <span>{{ product?.price }}$</span>
+            <span [ngClass]="getThemeMode() ? 'product-price-dark_mode' : ''">{{ product?.price }}$</span>
           </div>
-          <p class="lead text-justify mobile-text-left">{{ product?.description }}</p>
+          <p class="lead text-justify mobile-text-left" [ngClass]="getThemeMode() ? 'product-description-dark_mode' : ''">{{ product?.description }}</p>
           <div class="fs-5 mb-4">
             <!-- <span class="text-decoration-line-through">$45.00</span> -->
-            <span>Disponibilità: {{product?.stock}}</span>
+            <span [ngClass]="getThemeMode() ? 'product-stock-dark_mode' : ''">Disponibilità: {{product?.stock}}</span>
           </div>
           <div class="d-flex">
-            <input class="form-control text-center me-3" [(ngModel)] = "quantity" id="inputQuantity" type="number" value="1" (input)="onQuantityChange()" style="max-width: 3rem">
-            <button class="btn btn-outline-dark flex-shrink-0" type="button" (click)="onAddToCartCall()" [disabled]="!this.availability">
+            <input class="form-control text-center me-3" [(ngModel)] = "quantity" id="inputQuantity" type="number" value="1" (input)="onQuantityChange()" [ngClass]="getThemeMode() ? 'product-input-dark_mode' : ''" style="max-width: 3rem">
+            <button class="btn btn-outline-dark flex-shrink-0" type="button" (click)="onAddToCartCall()" [disabled]="!this.availability" [ngClass]="getThemeMode() ? 'product-button-dark_mode' : ''">
               <i class="bi-cart-fill me-1"></i>
               Add to cart
             </button>
             <button class="favorites" (click)="addToFavorites()">
-              <fa-icon [icon]="favoritesStatus ? faFullHeart : faHeart"></fa-icon>
+              <fa-icon [ngClass]="getThemeMode() ? 'product-favorite-dark_mode' : ''" [icon]="favoritesStatus ? faFullHeart : faHeart"></fa-icon>
             </button>
           </div>
         </div>
@@ -32,24 +32,24 @@
 </div>
 
 
-<div class="background-gray">
-<section class="py-5 bg-light background-white">
+<div class="background-gray" [ngClass]="getThemeMode() ? 'back-dark_mode' : ''">
+<section class="py-5 bg-light background-white" [ngClass]="getThemeMode() ? 'related-dark_mode' : ''">
   <div class="container px-4 px-lg-5 mt-5">
-      <h2 class="fw-bolder mb-4">Related products</h2>
+      <h2 class="fw-bolder mb-4" [ngClass]="getThemeMode() ? 'related-title-dark_mode' : ''">Related products</h2>
       <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-evenly">
           <div *ngFor="let relatedProduct of relatedProducts" class="col mb-5">
-              <div class="card h-100">
+              <div class="card h-100" [ngClass]="getThemeMode() ? 'related-product-dark_mode' : ''">
                 <a [routerLink]="'/products/' + relatedProduct.slug">
                   <img class="card-img-top card-resize" [src]="'/assets/images/' + relatedProduct?.photo" alt="...">
                 </a>
                   <div class="card-body p-4">
-                      <div class="text-center">
+                      <div class="text-center" [ngClass]="getThemeMode() ? 'related-product_info-dark_mode' : ''">
                           <h5 class="fw-bolder">{{ relatedProduct.name | nameShorter }}</h5>
                           ${{ relatedProduct.price }}
                       </div>
                   </div>
                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" [routerLink]="'/products/' + relatedProduct.slug">More details</a></div>
+                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" [routerLink]="'/products/' + relatedProduct.slug" [ngClass]="getThemeMode() ? 'product-button-dark_mode' : ''">More details</a></div>
                   </div>
               </div>
           </div>

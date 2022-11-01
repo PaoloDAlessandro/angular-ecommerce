@@ -7,3 +7,34 @@
   border-radius: 12px;
 }
 
+.title-dark_mode {
+  color: white;
+}
+
+.sub_title-dark_mode {
+  color: #abaab9;
+}
+
+.payoff-border-dark_mode {
+  border-bottom: 1px solid rgb(109, 109, 109) !important;
+}
+
+.payoff-img-dark_mode {
+  border: 1px solid rgb(109, 109, 109) !important;
+}
+
+.text_white-dark_mode {
+  color: white;
+}
+
+.features-dark_mode {
+  background-color: #191818 !important;
+}
+
+.icons-dark_mode {
+  color: white;
+}
+
+.description-dark_mode {
+  color: rgba(255, 255, 255, 0.48);
+}

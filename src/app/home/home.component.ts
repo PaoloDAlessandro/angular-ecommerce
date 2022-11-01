@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { faMedal } from '@fortawesome/free-solid-svg-icons';
 import { faTruck } from '@fortawesome/free-solid-svg-icons';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
+import { ThememodeService } from '../thememode.service';
 
 @Component({
   selector: 'app-home',
@@ -15,9 +16,15 @@ export class HomeComponent implements OnInit {
   faTruck = faTruck
   faCoins = faCoins
 
-  constructor() { }
+
+  constructor(private themeModeService :ThememodeService) {
+   }
 
   ngOnInit(): void {
+  }
+
+  getThemeMode() {
+    return this.themeModeService.thememode
   }
 
 }

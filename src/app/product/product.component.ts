@@ -8,6 +8,7 @@ import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as fullHeart } from '@fortawesome/free-solid-svg-icons';
 import { FavoritesService } from '../favorites.service';
+import { ThememodeService } from '../thememode.service';
 
 @Component({
   selector: 'app-product',
@@ -31,7 +32,7 @@ export class ProductComponent implements OnInit {
 
   relatedProducts: Product[] = []
 
-  constructor(private route: ActivatedRoute, private productService: ProductsService, private favoriteService: FavoritesService, private router: Router) {
+  constructor(private route: ActivatedRoute, private productService: ProductsService, private favoriteService: FavoritesService, private themeModeService :ThememodeService, private router: Router) {
     const { slug } = route?.snapshot.params ?? {}
     this.product =  productService.searchProduct(slug)
     this.relatedProducts = productService.searchByCategoryProduct(this.product?.category as String, this.product?.name as String)
@@ -88,6 +89,10 @@ export class ProductComponent implements OnInit {
     else {
       this.availability = false
     }
+  }
+
+  getThemeMode() {
+    return this.themeModeService.thememode
   }
 
   disableModal() {

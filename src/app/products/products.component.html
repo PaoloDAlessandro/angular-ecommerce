@@ -1,17 +1,17 @@
-<div class="background-gray">
-  <div class="input-container input-mobile">
+<div class="background-gray" [ngClass]="getThemeMode() ? 'product-container-dark_mode' : ''">
+  <div class="input-container input-mobile" [ngClass]="getThemeMode() ? 'input-container-dark_mode' : ''">
     <input type="text" [(ngModel)]="name" placeholder="Search a product">
   </div>
 </div>
 
-<div class="product-container">
+<div class="product-container" [ngClass]="getThemeMode() ? 'product-container-dark_mode' : ''">
     <div *ngFor="let product of products! | productSearch:name" class="mb-5 temp">
-      <div class="card">
+      <div class="card" [ngClass]="getThemeMode() ? 'product-card-dark_mode' : ''">
         <a [routerLink]="product.slug">
           <img class="card-img-top card-resize" [src]="'/assets/images/' + product.photo" alt="...">
         </a>
           <div class="card-body p-4">
-              <div class="text-center">
+              <div class="text-center" [ngClass]="getThemeMode() ? 'product-price-dark_mode' : ''">
                   <h5 class="fw-bolder">{{ product.name }}</h5>
                   ${{ product.price }}
                 <div class="card-product-reviews">
@@ -25,6 +25,6 @@
               </div>
           </div>
           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-              <div class="text-center"><a class="btn btn-outline-dark mt-auto" [routerLink]="product.slug">View details</a></div>
+              <div class="text-center" [ngClass]="getThemeMode() ? 'product-button-dark_mode' : ''"><a class="btn btn-outline-dark mt-auto" [routerLink]="product.slug">View details</a></div>
           </div>
       </div>

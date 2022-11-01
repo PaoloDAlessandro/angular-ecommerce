@@ -12,17 +12,33 @@
   align-items: center;
 }
 
+.header-dark_mode {
+  background-color: black !important;
+  border-bottom: 1px solid rgb(37, 37, 37);
+}
+
 .background-dark {
   background-color: #202529;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+}
 
+.background-dark_mode {
+  background-color: black !important;
 }
 
 .sticky {
   position: sticky;
   top: 0;
   z-index: 999;
+}
+
+.static-width {
+  min-width: 20px;
+}
+
+.empty-link {
+  width: 30px;
 }
 
 

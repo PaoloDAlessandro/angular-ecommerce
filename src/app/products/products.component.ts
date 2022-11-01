@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBoxOpen } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { ProductSearch } from '../product-search.pipe';
+import { ThememodeService } from '../thememode.service';
 
 @Component({
   selector: 'app-products',
@@ -22,11 +23,15 @@ export class ProductsComponent implements OnInit {
 
   products:Product[] = []
 
-  constructor(private productsService:ProductsService) {
+  constructor(private productsService:ProductsService, private themeModeService :ThememodeService) {
     this.products = productsService.products
    }
 
   ngOnInit(): void {
+  }
+
+  getThemeMode() {
+    return this.themeModeService.thememode
   }
 
   /*

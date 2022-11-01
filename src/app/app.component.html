@@ -1,4 +1,4 @@
-<header class="p-3 bg-dark text-white sticky">
+<header class="p-3 bg-dark text-white sticky" [ngClass]="getThemeMode() ? 'header-dark_mode' : ''">
 
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -12,9 +12,11 @@
             <a routerLink="/favorites" routerLinkActive="text-secondary" class="header-link">
               <fa-icon [icon]="faHeart"></fa-icon>
             </a>
-          <a routerLink="/cart" routerLinkActive="text-secondary" class="header-link">
-            <fa-icon [icon]="faCartShopping"></fa-icon>
-          </a>
+            <a routerLink="/cart" routerLinkActive="text-secondary" class="header-link">
+              <fa-icon [icon]="faCartShopping"></fa-icon>
+            </a>
+            <div class="empty-link"></div>
+            <fa-icon class="static-width" (click)="switchThemeMode()" [icon]="this.getThemeMode() ? faSun : faMoon"></fa-icon>
           </div>
       </div>
     </div>

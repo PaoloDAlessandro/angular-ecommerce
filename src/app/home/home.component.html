@@ -1,48 +1,48 @@
-<div class="px-4 pt-5 my-5 text-center border-bottom">
-  <h1 class="display-4 fw-bold">Shopping like never before</h1>
+<div class="px-4 pt-5 my-5 text-center border-bottom" [ngClass]="getThemeMode() ? 'payoff-border-dark_mode' : ''">
+  <h1 class="display-4 fw-bold" [ngClass]="getThemeMode() ? 'title-dark_mode' : ''"> Shopping like never before</h1>
   <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">Dale is the first e-commerce platform to give you a completely personalized and innovative experience. The customer is our top priority and that's why Dale's design has been completely overhauled this year, we hope you like it! </p>
+    <p class="lead mb-4" [ngClass]="getThemeMode() ? 'sub_title-dark_mode' : ''">Dale is the first e-commerce platform to give you a completely personalized and innovative experience. The customer is our top priority and that's why Dale's design has been completely overhauled this year, we hope you like it! </p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
       <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" routerLink="/products">Take a look</button>
     </div>
   </div>
   <div class="overflow-hidden" style="max-height: 30vh;">
     <div class="container px-5">
-      <img [src]="'/assets/images/home-product-example.png'" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+      <img [src]="getThemeMode() ? '/assets/images/home-product-example-dark_mode.png' : '/assets/images/home-product-example.png'" class="img-fluid border rounded-3 shadow-lg mb-4" [ngClass]="getThemeMode() ? 'payoff-img-dark_mode' : ''" alt="Example image" width="700" height="500" loading="lazy">
     </div>
   </div>
 </div>
 
 <div class="container px-4 py-5" id="hanging-icons">
-  <h2 class="pb-2 border-bottom">Our features</h2>
+  <h2 class="pb-2 border-bottom" [ngClass]="getThemeMode() ? 'text_white-dark_mode payoff-border-dark_mode' : ''">Our features</h2>
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
     <div class="col d-flex align-items-start">
-      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 icon-container">
-        <fa-icon class="b icon-p" [icon]="faMedal"></fa-icon>
+      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 icon-container" [ngClass]="getThemeMode() ? 'features-dark_mode' : ''">
+        <fa-icon class="b icon-p" [ngClass]="getThemeMode() ? 'icons-dark_mode' : ''" [icon]="faMedal"></fa-icon>
       </div>
       <div>
-        <h3 class="fs-2">High-quality</h3>
-        <p>Our products are certified by our professionals before being put on sale. Thus we always guarantee products of the highest quality.</p>
+        <h3 class="fs-2" [ngClass]="getThemeMode() ? 'text_white-dark_mode' : ''">High-quality</h3>
+        <p [ngClass]="getThemeMode() ? 'description-dark_mode' : ''">Our products are certified by our professionals before being put on sale. Thus we always guarantee products of the highest quality.</p>
 
       </div>
     </div>
     <div class="col d-flex align-items-start">
-      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 icon-container">
-        <fa-icon class="b icon-p" [icon]="faTruck"></fa-icon>
+      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 icon-container" [ngClass]="getThemeMode() ? 'features-dark_mode' : ''">
+        <fa-icon class="b icon-p" [ngClass]="getThemeMode() ? 'icons-dark_mode' : ''" [icon]="faTruck"></fa-icon>
       </div>
       <div>
-        <h3 class="fs-2">Fast delivery</h3>
-        <p>After years of commitment to our customers we have managed to guarantee you fast delivery within 3 days from the date of purchase</p>
+        <h3 class="fs-2" [ngClass]="getThemeMode() ? 'text_white-dark_mode' : ''">Fast delivery</h3>
+        <p [ngClass]="getThemeMode() ? 'description-dark_mode' : ''">After years of commitment to our customers we have managed to guarantee you fast delivery within 3 days from the date of purchase</p>
 
       </div>
     </div>
     <div class="col d-flex align-items-start">
-      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 icon-container">
-        <fa-icon class="b icon-p" [icon]="faCoins"></fa-icon>
+      <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 icon-container" [ngClass]="getThemeMode() ? 'features-dark_mode' : ''">
+        <fa-icon class="b icon-p" [ngClass]="getThemeMode() ? 'icons-dark_mode' : ''" [icon]="faCoins"></fa-icon>
       </div>
       <div>
-        <h3 class="fs-2">Money Back Guarantee</h3>
-        <p>We are sure that the quality of the products we offer will never disappoint you, but in case you can rely on our return policy.</p>
+        <h3 class="fs-2" [ngClass]="getThemeMode() ? 'text_white-dark_mode' : ''">Money Back Guarantee</h3>
+        <p [ngClass]="getThemeMode() ? 'description-dark_mode' : ''">We are sure that the quality of the products we offer will never disappoint you, but in case you can rely on our return policy.</p>
       </div>
     </div>
   </div>
