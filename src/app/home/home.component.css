@@ -19,6 +19,21 @@
   border-bottom: 1px solid rgb(109, 109, 109) !important;
 }
 
+.features-remove-border {
+  border: 0 !important;
+  padding-left: 8px;
+  padding-top: 6px;
+  border-left: 8px solid #212529 !important;
+}
+
+.payoff-block-width {
+  max-width: 870px;
+}
+
+.features-border_dark-mode {
+  border-color: #191818 !important;
+}
+
 .payoff-img-dark_mode {
   border: 1px solid rgb(109, 109, 109) !important;
 }

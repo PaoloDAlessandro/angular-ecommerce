@@ -9,6 +9,18 @@
   margin-right: auto;
 }
 
+.favorite-dark_mode fa-icon {
+  color: white;
+}
+
+.related-product-fix_margin {
+  margin-top: 1rem !important;
+}
+
+.related-product_title-fix_margin {
+  margin-bottom: 4rem !important;
+}
+
 .container-dark_mode {
   background-color: #04030c;
 }
@@ -22,7 +34,7 @@
 }
 
 .related-dark_mode {
-  background-color: #171717 !important;
+  background-color: #0b0a17 !important;
 }
 
 .related-product-dark_mode {
