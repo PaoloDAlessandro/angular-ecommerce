@@ -267,16 +267,16 @@
 </div>
 
 
-<div class="modal-background" *ngIf="formSubmit">
+<div class="modal-background" [ngClass]="getThemeMode() ? 'modal-background-dark_mode' : ''" *ngIf="formSubmit">
 
   <div class="modal modal-alert position-static d-block py-5 position-absolute" tabindex="-1" role="dialog" id="modalChoice">
     <div class="modal-dialog" role="document">
-      <div class="modal-content rounded-3 shadow">
+      <div class="modal-content rounded-3 shadow" [ngClass]="getThemeMode() ? 'modal-background-dark_mode' : ''">
         <div class="modal-body p-4 text-center">
-          <h5 class="mb-0"><fa-icon [icon]="faCircleCheck"></fa-icon>&nbsp; Order confirmed!</h5>
-          <p class="mb-0">Your order will be delivered in 5 work days</p>
+          <h5 class="mb-0" [ngClass]="getThemeMode() ? 'modal-title-dark_mode' : ''"><fa-icon [icon]="faCircleCheck"></fa-icon>&nbsp; Order confirmed!</h5>
+          <p class="mb-0" [ngClass]="getThemeMode() ? 'modal-text-dark_mode' : ''">Your order will be delivered in 5 work days</p>
         </div>
-        <div class="modal-footer flex-nowrap p-0">
+        <div class="modal-footer flex-nowrap p-0" [ngClass]="getThemeMode() ? 'modal-footer-dark_mode' : ''">
           <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 fix-button-modal" data-bs-dismiss="modal" routerLink="/cart">Cart</button>
         </div>
       </div>
@@ -284,12 +284,12 @@
   </div>
 </div>
 
-<div class="background-gray" *ngIf="userCart.length == 0">
+<div class="background-gray" *ngIf="userCart.length == 0" [ngClass]="getThemeMode() ? 'background-black' : ''">
 
-  <div class="empty-cart">
+  <div class="empty-cart" [ngClass]="getThemeMode() ? 'background-black' : ''">
     <div class="px-4 py-5 my-5 fix-cart-empty-margin text-center">
       <div class="cart-empty-spacer-big"></div>
-      <h1 class="display-5 fw-bold">Cart is empty :(</h1>
+      <h1 class="display-5 fw-bold" [ngClass]="getThemeMode() ? 'cart-empty-dark_mode' : ''">Cart is empty :(</h1>
       <div class="cart-empty-spacer"></div>
       <div class="col-lg-6 mx-auto">
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
