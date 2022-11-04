@@ -3,9 +3,21 @@
   min-height: 92.4vh;
 }
 
+.background-black {
+  background-color: black;
+}
+
 .cart-container {
   background-color:#F3F7F9;
   padding: 100px 0;
+}
+
+.cart-container-dark_mode {
+  background-color: black;
+}
+
+.empty-cart-dark_mode h1 {
+  color: white;
 }
 
 .cart-card {

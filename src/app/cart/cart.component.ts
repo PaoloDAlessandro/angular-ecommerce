@@ -3,6 +3,7 @@ import { Product } from '../dati/product.data';
 import { ProductsService } from '../products.service';
 
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { ThememodeService } from '../thememode.service';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,7 @@ export class CartComponent implements OnInit {
   userCart :Product[] = []
   faTrash = faTrash
 
-  constructor(private productService :ProductsService) {
+  constructor(private productService :ProductsService, private themeModeService :ThememodeService) {
     this.userCart = productService.cart
    }
 
@@ -58,4 +59,9 @@ export class CartComponent implements OnInit {
   searchInUserCart(slug: string) {
     return this.userCart.find(p => p.slug === slug)
   }
+
+  getThemeMode() {
+    return this.themeModeService.thememode
+  }
+
 }

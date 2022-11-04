@@ -1,4 +1,4 @@
-<div class="empty-favorites" *ngIf="favoriteProducts.length === 0">
+<div class="empty-favorites" [ngClass]="getThemeMode() ? 'background-black no-favorite-dark_mode' : ''" *ngIf="favoriteProducts.length === 0">
   <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">You don't even like a product :(</h1>
     <div class="cart-empty-spacer"></div>
@@ -10,14 +10,14 @@
   </div>
 </div>
 
-<div class="background-gray fix-position" *ngIf="favoriteProducts.length != 0">
+<div class="background-gray fix-position"  *ngIf="favoriteProducts.length != 0">
   <div class="input-container input-mobile">
     <input type="text" [(ngModel)]="research" placeholder="Search a product">
   </div>
 </div>
 
 
-<div class="product-container">
+<div class="product-container" [ngClass]="getThemeMode() ? 'background-black' : ''">
   <div *ngFor="let product of favoriteProducts | favoriteSearch:research" class="mb-5 temp">
     <div class="card">
       <a [routerLink]="'/products/' + product.slug">

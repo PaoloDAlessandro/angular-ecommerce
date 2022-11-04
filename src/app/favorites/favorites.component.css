@@ -1,5 +1,13 @@
-√.background-gray {
+.background-gray {
   background-color: #F3F7F9;
+}
+
+.background-black {
+  background-color: black !important;
+}
+
+.no-favorite-dark_mode h1 {
+  color: white;
 }
 
 .input-container {

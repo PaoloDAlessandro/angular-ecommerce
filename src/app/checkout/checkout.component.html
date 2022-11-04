@@ -1,6 +1,6 @@
-<div class="container" *ngIf="userCart.length > 0">
+<div class="container" *ngIf="userCart.length > 0" [ngClass]="getThemeMode() ? 'background-black' : ''">
   <main>
-    <div class="py-5 text-center">
+    <div class="py-5 text-center" [ngClass]="getThemeMode() ? 'checkout-title-dark_mode' : ''">
       <h2>Cart Checkout</h2>
     </div>
 
@@ -11,22 +11,22 @@
           <span class="badge bg-primary rounded-pill">{{ userCart.length }}</span>
         </h4>
         <ul class="list-group mb-3">
-          <li *ngFor="let product of userCart" class="list-group-item d-flex justify-content-between lh-sm">
+          <li *ngFor="let product of userCart" class="list-group-item d-flex justify-content-between lh-sm" [ngClass]="getThemeMode() ? 'checkout-cart-dark_mode' : ''">
             <div style="display:flex;">
-              <h6 class="my-0">{{ product.name }} &nbsp; - &nbsp;</h6>
+              <h6 class="my-0" [ngClass]="getThemeMode() ? 'checkout-cart-productName-dark_mode' : ''">{{ product.name }} &nbsp; - &nbsp;</h6>
               <small class="stock"><b>{{ product.stock }}</b></small>
             </div>
-            <span class="text-muted">${{ product.price }}</span>
+            <span class="text-muted" [ngClass]="getThemeMode() ? 'checkout-cart-productPrice-dark_mode' : ''" >${{ product.price }}</span>
           </li>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>${{ total }}</strong>
+          <li class="list-group-item d-flex justify-content-between" [ngClass]="getThemeMode() ? 'checkout-cart-dark_mode' : ''">
+            <span [ngClass]="getThemeMode() ? 'checkout-cart-productName-dark_mode' : ''">Total (USD)</span>
+            <strong [ngClass]="getThemeMode() ? 'checkout-cart-productName-dark_mode' : ''">${{ total }}</strong>
           </li>
         </ul>
 
       </div>
       <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Billing address</h4>
+        <h4 class="mb-3" [ngClass]="getThemeMode() ? 'checkout-section-dark_mode' : ''">Billing address</h4>
         <form
           class="needs-validation"
           novalidate=""
@@ -37,7 +37,7 @@
         >
           <div class="row g-3">
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">First name</label>
+              <label for="firstName" class="form-label" [ngClass]="getThemeMode() ? 'checkout-label-dark_mode' : ''">First name</label>
               <input
                 ngModel
                 name="firstNameInput"
@@ -48,6 +48,7 @@
                 maxlength="50"
                 required
                 #firstNameInput="ngModel"
+                [ngClass]="getThemeMode() ? 'checkout-input-dark_mode' : ''"
                 >
               <div class="help-block" *ngIf="!firstNameInput.valid && firstNameInput.touched">
                 Valid first name is required.
@@ -55,7 +56,7 @@
             </div>
 
             <div class="col-sm-6">
-              <label for="lastName" class="form-label">Last name</label>
+              <label for="lastName" class="form-label" [ngClass]="getThemeMode() ? 'checkout-label-dark_mode' : ''">Last name</label>
               <input
                 ngModel
                 name="lastName"
@@ -66,6 +67,7 @@
                 id="lastName"
                 #lastName="ngModel"
                 required
+                [ngClass]="getThemeMode() ? 'checkout-input-dark_mode' : ''"
               >
               <div class="help-block" *ngIf="!lastName.valid && lastName.touched">
                 Valid last name is required.
@@ -73,7 +75,7 @@
             </div>
 
             <div class="col-12">
-              <label for="email" class="form-label">Email</label>
+              <label for="email" class="form-label" [ngClass]="getThemeMode() ? 'checkout-label-dark_mode' : ''">Email</label>
               <input
                 ngModel
                 name="email"
@@ -84,6 +86,7 @@
                 id="email"
                 #email="ngModel"
                 required
+                [ngClass]="getThemeMode() ? 'checkout-input-dark_mode' : ''"
               >
               <div class="help-block" *ngIf="!email.valid && email.touched">
                 Please enter a valid email address for shipping updates.
@@ -91,7 +94,7 @@
             <div id="pwm-inline-icon-82780" class="pwm-field-icon" style="position: absolute !important; width: 18px !important; height: 18px !important; min-height: 0px !important; min-width: 0px !important; z-index: 2147483645 !important; box-shadow: none !important; box-sizing: content-box !important; background: none !important; border: none !important; padding: 0px !important; cursor: pointer !important; outline: none !important; margin-top: -28px; margin-left: 586px;"><svg style="display: inline-block !important; width: 16px !important; height: 16px !important; fill: rgb(230, 0, 23) !important; margin-top: 0.5px !important; position: absolute !important; top: 0px !important; left: 0px !important;" viewBox="0 0 40 64"><g><path d="m20,28.12a33.78,33.78 0 0 1 13.36,2.74a22.18,22.18 0 0 1 0.64,5.32c0,9.43 -5.66,17.81 -14,20.94c-8.34,-3.13 -14,-11.51 -14,-20.94a22.2,22.2 0 0 1 0.64,-5.32a33.78,33.78 0 0 1 13.36,-2.74m0,-28.12c-8.82,0 -14,7.36 -14,16.41l0,5.16c2,-1.2 2,-1.49 5,-2.08l0,-3.08c0,-6.21 2.9,-11.41 8.81,-11.41l0.19,0c6.6,0 9,4.77 9,11.41l0,3.08c3,0.58 3,0.88 5,2.08l0,-5.16c0,-9 -5.18,-16.41 -14,-16.41l0,0zm0,22c-6.39,0 -12.77,0.67 -18.47,4a31.6,31.6 0 0 0 -1.53,9.74c0,13.64 8.52,25 20,28.26c11.48,-3.27 20,-14.63 20,-28.26a31.66,31.66 0 0 0 -1.54,-9.77c-5.69,-3.3 -12.08,-4 -18.47,-4l0,0l0.01,0.03z"></path><path d="m21.23,39.5a2.81,2.81 0 0 0 1.77,-2.59a2.94,2.94 0 0 0 -3,-2.93a3,3 0 0 0 -3,3a2.66,2.66 0 0 0 1.77,2.48l-1.77,4.54l6,0l-1.77,-4.5z"></path></g></svg></div></div>
 
             <div class="col-12">
-              <label for="address" class="form-label">Address</label>
+              <label for="address" class="form-label" [ngClass]="getThemeMode() ? 'checkout-label-dark_mode' : ''">Address</label>
               <input
                 ngModel
                 type="text"
@@ -102,6 +105,7 @@
                 placeholder="1234 Main St"
                 #address="ngModel"
                 required
+                [ngClass]="getThemeMode() ? 'checkout-input-dark_mode' : ''"
               >
               <div class="help-block" *ngIf="!address.valid && address.touched" >
                 Please enter your shipping address.
@@ -109,18 +113,19 @@
             </div>
 
             <div class="col-12">
-              <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+              <label for="address2" class="form-label" [ngClass]="getThemeMode() ? 'checkout-label-dark_mode' : ''">Address 2 <span class="text-muted">(Optional)</span></label>
               <input
 
                 type="text"
                 class="form-control"
                 id="address2"
                 placeholder="Apartment or suite"
+                [ngClass]="getThemeMode() ? 'checkout-input-dark_mode' : ''"
               >
             </div>
 
             <div class="col-md-5">
-              <label for="country" class="form-label">Country</label>
+              <label for="country" class="form-label" [ngClass]="getThemeMode() ? 'checkout-label-dark_mode' : ''">Country</label>
               <select
                 ngModel
                 class="form-select"
@@ -128,6 +133,7 @@
                 name="country"
                 #country="ngModel"
                 required=""
+                [ngClass]="getThemeMode() ? 'checkout-input-dark_mode' : ''"
               >
                 <option value="">Choose...</option>
                 <option>United States</option>
@@ -143,7 +149,7 @@
             </div>
 
             <div class="col-md-3">
-              <label for="zip" class="form-label">Zip</label>
+              <label for="zip" class="form-label" [ngClass]="getThemeMode() ? 'checkout-label-dark_mode' : ''">Zip</label>
               <input
                 ngModel
                 type="number"
@@ -155,6 +161,8 @@
                 placeholder=""
                 #zip="ngModel"
                 required
+                [ngClass]="getThemeMode() ? 'checkout-input-dark_mode' : ''"
+
               >
               <div class="help-block" *ngIf="!zip.valid && zip.touched">
                 Zip code required.
@@ -164,12 +172,12 @@
 
           <hr class="my-4">
 
-          <h4 class="mb-3">Payment</h4>
+          <h4 class="mb-3" [ngClass]="getThemeMode() ? 'checkout-section-dark_mode' : ''">Payment</h4>
 
 
           <div class="row gy-3">
             <div class="col-md-6">
-              <label for="cc-name" class="form-label">Name on card</label>
+              <label for="cc-name" class="form-label" [ngClass]="getThemeMode() ? 'checkout-label-dark_mode' : ''">Name on card</label>
               <input
                 ngModel
                 name="nameOnCard"
@@ -180,6 +188,8 @@
                 placeholder=""
                 #nameOnCard="ngModel"
                 required=""
+                [ngClass]="getThemeMode() ? 'checkout-input-dark_mode' : ''"
+
               >
               <small class="text-muted">Full name as displayed on card</small>
               <div class="help-block" *ngIf="!nameOnCard.valid && nameOnCard.touched">
@@ -188,7 +198,7 @@
             </div>
 
             <div class="col-md-6">
-              <label for="cc-number" class="form-label">Credit card number</label>
+              <label for="cc-number" class="form-label" [ngClass]="getThemeMode() ? 'checkout-label-dark_mode' : ''">Credit card number</label>
               <input
                 ngModel
                 name="cardNumber"
@@ -199,6 +209,8 @@
                 id="cardNumber"
                 #cardNumber="ngModel"
                 required
+                [ngClass]="getThemeMode() ? 'checkout-input-dark_mode' : ''"
+
               >
               <div class="help-block" *ngIf="!cardNumber.valid && cardNumber.touched">
                 Credit card number is required
@@ -206,7 +218,7 @@
             </div>
 
             <div class="col-md-3">
-              <label for="cc-expiration" class="form-label">Expiration</label>
+              <label for="cc-expiration" class="form-label" [ngClass]="getThemeMode() ? 'checkout-label-dark_mode' : ''">Expiration</label>
               <input
                 ngModel
                 name="expiration"
@@ -216,6 +228,8 @@
                 placeholder=""
                 #expiration="ngModel"
                 required
+                [ngClass]="getThemeMode() ? 'checkout-input-dark_mode' : ''"
+
               >
               <div class="help-block" *ngIf="!expiration.valid && expiration.touched">
                 Expiration date required
@@ -223,7 +237,7 @@
             </div>
 
             <div class="col-md-3">
-              <label for="cc-cvv" class="form-label">CVV</label>
+              <label for="cc-cvv" class="form-label" [ngClass]="getThemeMode() ? 'checkout-label-dark_mode' : ''">CVV</label>
               <input
                 ngModel
                 name="cvv"
@@ -234,6 +248,8 @@
                 id="cc-cvv"
                 #cvv="ngModel"
                 required
+                [ngClass]="getThemeMode() ? 'checkout-input-dark_mode' : ''"
+
               >
               <div class="help-block" *ngIf="!cvv.valid && cvv.touched">
                 Security code required

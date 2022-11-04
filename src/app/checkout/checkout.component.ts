@@ -3,6 +3,7 @@ import { FormControl, NgForm, Validators } from '@angular/forms';
 import { Product } from '../dati/product.data';
 import { ProductsService } from '../products.service';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { ThememodeService } from '../thememode.service';
 
 @Component({
   selector: 'app-checkout',
@@ -17,7 +18,7 @@ export class CheckoutComponent implements OnInit, DoCheck {
 
   formSubmit: boolean = false
 
-  constructor(private productsService :ProductsService) {
+  constructor(private productsService :ProductsService, private themeModeService :ThememodeService) {
     this.userCart = this.productsService.cart
     this.cartTotal()
    }
@@ -39,6 +40,10 @@ export class CheckoutComponent implements OnInit, DoCheck {
   onSubmit(ngForm: NgForm) {
     this.formSubmit = true
     this.productsService.cleanCart()
+  }
+
+  getThemeMode() {
+    return this.themeModeService.thememode
   }
 
 }

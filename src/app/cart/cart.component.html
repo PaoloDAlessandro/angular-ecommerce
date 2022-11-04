@@ -1,7 +1,7 @@
-<div class="background-gray">
+<div class="background-gray" [ngClass]="getThemeMode() ? 'background-black' : ''">
 
 
-  <div class="cart-container">
+  <div class="cart-container" [ngClass]="getThemeMode() ? 'cart-container-dark_mode' : ''">
       <div class="cart-card" *ngFor="let product of userCart">
         <div class="cart-card-info">
           <div class="cart-card-info cart-product-image">
@@ -37,7 +37,7 @@
   </div>
 </div>
 
-<div class="empty-cart" *ngIf="userCart.length == 0">
+<div class="empty-cart" [ngClass]="getThemeMode() ? 'empty-cart-dark_mode' : ''" *ngIf="userCart.length == 0">
   <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">Cart is empty :(</h1>
     <div class="cart-empty-spacer"></div>

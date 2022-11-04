@@ -122,6 +122,34 @@
   width: 100%;
 }
 
+.modal-background-dark_mode {
+  background-color: #282A2D;
+}
+
+.modal-title-dark_mode {
+  color: white;
+}
+
+.modal-text-dark_mode {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.modal-border-dark_mode {
+  border: 1px solid rgb(109, 109, 109) !important
+}
+
+.modal-button-left-dark_mode {
+  border-right: 1px solid rgb(109, 109, 109) !important
+}
+
+.modal-button-right-dark_mode {
+  border-left: 1px solid rgb(109, 109, 109) !important
+}
+
+.modal-footer-dark_mode {
+  border-top: 1px solid rgb(109, 109, 109) !important
+}
+
 .mb-0 fa-icon {
   color: rgb(0, 136, 20);
 }

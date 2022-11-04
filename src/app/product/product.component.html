@@ -59,16 +59,16 @@
 
 <div class="modal-background" *ngIf="addToCartStatus">
 
-  <div class="modal modal-alert position-static d-block py-5 position-absolute" tabindex="-1" role="dialog" id="modalChoice">
+  <div class="modal modal-alert position-static d-block py-5 position-absolute"  tabindex="-1" role="dialog" id="modalChoice">
     <div class="modal-dialog" role="document">
-      <div class="modal-content rounded-3 shadow">
+      <div class="modal-content rounded-3 shadow" [ngClass]="getThemeMode() ? 'modal-background-dark_mode' : ''">
         <div class="modal-body p-4 text-center">
-          <h5 class="mb-0"><fa-icon [icon]="faCircleCheck"></fa-icon>&nbsp; Product added to cart!</h5>
-          <p class="mb-0">Now you can find {{ product?.name }} in the cart section</p>
+          <h5 class="mb-0" [ngClass]="getThemeMode() ? 'modal-title-dark_mode' : ''"><fa-icon [icon]="faCircleCheck"></fa-icon>&nbsp; Product added to cart!</h5>
+          <p class="mb-0" [ngClass]="getThemeMode() ? 'modal-text-dark_mode' : ''">Now you can find {{ product?.name }} in the cart section</p>
         </div>
-        <div class="modal-footer flex-nowrap p-0">
-          <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-end" (click)="disableModal()"><strong>Continue shopping</strong></button>
-          <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0" data-bs-dismiss="modal" routerLink="/cart">Cart</button>
+        <div class="modal-footer flex-nowrap p-0" [ngClass]="getThemeMode() ? 'modal-footer-dark_mode' : ''">
+          <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-end" [ngClass]="getThemeMode() ? 'modal-button-left-dark_mode' : ''" (click)="disableModal()"><strong>Continue shopping</strong></button>
+          <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0" [ngClass]="getThemeMode() ? 'modal-button-right-dark_mode' : ''" data-bs-dismiss="modal" routerLink="/cart">Cart</button>
         </div>
       </div>
     </div>
