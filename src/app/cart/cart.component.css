@@ -78,6 +78,35 @@
   border-radius: 50%;
 }
 
+.cart-edit-stock-dark_mode button {
+  background-color: #282A2D;
+  color: white;
+}
+
+.cart-edit-stock-dark_mode button:hover {
+  background-color: #202529 !important;
+}
+
+.cart-actions-dark_mode button {
+  color: rgba(255, 255, 255, 0.48);
+  background-color: #100F14;
+}
+
+.cart-actions-dark_mode button:hover {
+  color: white;
+  background-color: #202529;
+}
+
+.cart-actions-dark_mode a {
+  color: rgba(255, 255, 255, 0.48);
+  background-color: #100F14;
+}
+
+.cart-actions-dark_mode a:hover {
+  color: white;
+  background-color: #202529;
+}
+
 .cart-edit-stock button:hover {
   background-color: #F3F7F9;
 }

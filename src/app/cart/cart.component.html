@@ -13,7 +13,7 @@
     <div class="cart-card-info cart-product-name">
       <p [ngClass]="getThemeMode() ? 'cart-card-title-dark_mode' : ''">{{product.name}}</p>
     </div>
-    <div class="cart-card-info cart-edit-stock">
+    <div class="cart-card-info cart-edit-stock" [ngClass]="getThemeMode() ? 'cart-edit-stock-dark_mode' : ''">
       <button (click)="decreaseStock(product.slug)">-</button>
       <input type="text" [(ngModel)]="product.stock" [ngClass]="getThemeMode() ? 'cart-card-stock-input-dark_mode' : ''">
       <button (click)="increaseStock(product.slug)">+</button>
@@ -31,7 +31,7 @@
 
   </div>
 
-  <div class="cart-actions" *ngIf="userCart.length > 0">
+  <div class="cart-actions" *ngIf="userCart.length > 0" [ngClass]="getThemeMode() ? 'cart-actions-dark_mode' : ''">
     <button class="btn btn-outline-dark mt-auto b-white" (click)="clearCart()">Clear cart</button>
     <a class="btn btn-outline-dark mt-auto b-white" routerLink="/checkout" >Go to payment</a>
   </div>
