@@ -96,7 +96,7 @@
 }
 
 .product-image-resize {
-  max-height: 500px;
+  max-height: 460px;
   object-fit: contain;
 }
 

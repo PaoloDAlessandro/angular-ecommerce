@@ -35,6 +35,31 @@
   border: 1px solid rgba(49, 47, 47, 0.3);
 }
 
+.cart-card-dark_mode {
+  background-color: #100F14;
+}
+
+.cart-card-title-dark_mode {
+  color: white;
+}
+
+.cart-card-price-dark_mode {
+  color: rgba(255,255,255,0.48);
+}
+
+.cart-card-stock-input-dark_mode {
+  background-color: #282A2D;
+  color: white;
+  border: 0;
+  box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+  border-radius: .375rem;
+}
+
+.cart-card-delete-dark_mode button {
+  background-color: transparent !important;
+  color: white;
+}
+
 .cart-card-info {
   width: 18%;
   text-align: center;
@@ -61,6 +86,9 @@
   margin: 0 6px;
   width: 60px;
   text-align: center;
+  border-radius: .375rem;
+  border: 0;
+  box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
 }
 
 .cart-card-info p {

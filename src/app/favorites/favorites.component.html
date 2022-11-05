@@ -10,21 +10,21 @@
   </div>
 </div>
 
-<div class="background-gray fix-position"  *ngIf="favoriteProducts.length != 0">
+<div class="background-gray fix-position" [ngClass]="getThemeMode() ? 'background-black' : ''" *ngIf="favoriteProducts.length != 0">
   <div class="input-container input-mobile">
-    <input type="text" [(ngModel)]="research" placeholder="Search a product">
+    <input type="text" [(ngModel)]="research" [ngClass]="getThemeMode() ? 'input-dark_mode' : ''" placeholder="Search a product">
   </div>
 </div>
 
 
 <div class="product-container" [ngClass]="getThemeMode() ? 'background-black' : ''">
   <div *ngFor="let product of favoriteProducts | favoriteSearch:research" class="mb-5 temp">
-    <div class="card">
+    <div class="card" [ngClass]="getThemeMode() ? 'product-card-dark_mode' : ''">
       <a [routerLink]="'/products/' + product.slug">
         <img class="card-img-top card-resize" [src]="'/assets/images/' + product.photo" alt="...">
       </a>
         <div class="card-body p-4">
-            <div class="text-center">
+            <div class="text-center" [ngClass]="getThemeMode() ? 'product-title-dark_mode' : ''">
                 <h5 class="fw-bolder">{{ product.name }}</h5>
                 ${{ product.price }}
               <div class="card-product-reviews">
@@ -38,8 +38,8 @@
             </div>
         </div>
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent flex-card">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" [routerLink]="'/products/' + product.slug">View details</a></div>
-            <button class="favorites" (click)="removeFromFavorites(product)">
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" [routerLink]="'/products/' + product.slug" [ngClass]="getThemeMode() ? 'product-details-dark_mode' : ''">View details</a></div>
+            <button class="favorites" (click)="removeFromFavorites(product)" [ngClass]="getThemeMode() ? 'product-details-dark_mode' : ''">
               <fa-icon [icon]="faFullHeart"></fa-icon>
             </button>
           </div>

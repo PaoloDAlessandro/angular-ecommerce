@@ -2,7 +2,7 @@
 
 
   <div class="cart-container" [ngClass]="getThemeMode() ? 'cart-container-dark_mode' : ''">
-      <div class="cart-card" *ngFor="let product of userCart">
+      <div class="cart-card" *ngFor="let product of userCart" [ngClass]="getThemeMode() ? 'cart-card-dark_mode' : ''">
         <div class="cart-card-info">
           <div class="cart-card-info cart-product-image">
               <a [routerLink]= "'/products/' + product.slug">
@@ -11,19 +11,19 @@
             </div>
         </div>
     <div class="cart-card-info cart-product-name">
-      <p>{{product.name}}</p>
+      <p [ngClass]="getThemeMode() ? 'cart-card-title-dark_mode' : ''">{{product.name}}</p>
     </div>
     <div class="cart-card-info cart-edit-stock">
       <button (click)="decreaseStock(product.slug)">-</button>
-      <input type="text" [(ngModel)]="product.stock">
+      <input type="text" [(ngModel)]="product.stock" [ngClass]="getThemeMode() ? 'cart-card-stock-input-dark_mode' : ''">
       <button (click)="increaseStock(product.slug)">+</button>
     </div>
 
     <div class="cart-card-info cart-product-price">
-      <p><b>{{'$' + product.price}}</b></p>
+      <p [ngClass]="getThemeMode() ? 'cart-card-price-dark_mode' : ''"><b>{{'$' + product.price}}</b></p>
     </div>
 
-    <div class="cart-card-info cart-product-delete">
+    <div class="cart-card-info cart-product-delete" [ngClass]="getThemeMode() ? 'cart-card-delete-dark_mode' : ''">
       <button (click)="onDeleteFromCart(product.slug)">
         <fa-icon [icon]="faTrash"></fa-icon>
       </button>

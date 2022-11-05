@@ -26,6 +26,27 @@
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
+.input-dark_mode {
+  background-color: #282A2D;
+  color: white;
+}
+
+.product-card-dark_mode {
+  background-color: #100F14;
+}
+
+.product-title-dark_mode h5 {
+  color: white;
+}
+
+.product-details-dark_mode {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.product-title-dark_mode {
+  color: rgba(255, 255, 255, 0.48);
+}
+
 .product-container {
   display: flex;
   justify-content: space-around;
