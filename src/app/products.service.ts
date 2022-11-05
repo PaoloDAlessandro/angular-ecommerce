@@ -24,9 +24,7 @@ export class ProductsService {
     {code:"015", name:"MacBook Pro 2019", category:"laptop", description:"Designed for those who defy limits and change the world, the ne MacBook Pro is by far the most powerful notebook Apple has ever made. With an immersive 16-inch Retina display, superfast processors, netx-generation graphics, the largest battery capacity ever in a MacBook Pro.", slug:"macbook-pro-2019", photo:"macbookpro2019.png", price:"2099.99", stock:5, reviews:4},
   ]
 
-  private _cart :Product[] = [
-    {code:"001", name:"Iphone XR 64GB", category:"smartphone", description:"The iPhone XR is a strong contender if you're looking for an affordable iPhone, boasting the latest software, enough power and surprisingly good battery life... for an iPhone. With the introduction of the iPhone 11, the XR price has dropped further, making it great value for money.", slug:"iphone-xr", photo:"iphoneXr.png", price:"500.50", stock:3, reviews:4},
-  ]
+  private _cart :Product[] = []
 
 
   constructor() {
