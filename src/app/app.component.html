@@ -1,5 +1,4 @@
-<header class="p-3 bg-dark text-white sticky" [ngClass]="getThemeMode() ? 'header-dark_mode' : ''">
-
+<header class="p-3 bg-dark text-white sticky" [ngClass]="getThemeMode() ? 'header-dark_mode' : ''" *ngIf="getDeviceType() == 'desktop'">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 mobile-nav-ul">
@@ -22,6 +21,34 @@
     </div>
   </div>
 </header>
+
+<header class="p-3 bg-dark text-white sticky" id="mobile-header" [ngClass]="getThemeMode() ? 'header-dark_mode' : ''" *ngIf="getDeviceType() == 'mobile'">
+  <div class="container flex-mobile">
+    <fa-icon class="static-width" (click)="switchThemeMode()" [icon]="this.getThemeMode() ? faSun : faMoon"></fa-icon>
+    <div class="mobile-header">
+      <fa-icon [icon]="faBars" class="icon-padding" (click)="mobileMenuSwitch()" id="mobile-menu"></fa-icon>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu-options sticky-options" [ngClass]="getThemeMode() ? 'mobile-menu-options-dark-mode' : ''" *ngIf="mobileMenuStatus && getDeviceType() == 'mobile'">
+  <div class="container">
+    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 mobile-nav-ul mobile-options">
+      <li><a routerLink="/" routerLinkActive="text-secondary" (click)="mobileMenuSwitch()" [routerLinkActiveOptions]="{exact:true}" class="nav-link px-2 header-link">Home</a></li>
+      <li><a routerLink="/products" routerLinkActive="text-secondary" (click)="mobileMenuSwitch()" class="nav-link px-2 header-link">Products</a></li>
+      <li>
+        <a routerLink="/favorites" routerLinkActive="text-secondary" (click)="mobileMenuSwitch()" class="nav-link px-2 header-link">
+          <fa-icon [icon]="faHeart"></fa-icon>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/cart" routerLinkActive="text-secondary" (click)="mobileMenuSwitch()" class="nav-link px-2 header-link">
+          <fa-icon [icon]="faCartShopping"></fa-icon>
+        </a>
+      </li>
+      </ul>
+  </div>
+</div>
 
 <div>
   <router-outlet></router-outlet>
