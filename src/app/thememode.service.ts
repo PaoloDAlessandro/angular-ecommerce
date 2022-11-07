@@ -9,7 +9,12 @@ export class ThememodeService {
 
   constructor() {
     if(localStorage.getItem("thememode") === null) {
-      localStorage.setItem("thememode", this._thememode.toString())
+      if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        localStorage.setItem("thememode", "true")
+      }
+      else {
+        localStorage.setItem("thememode", "false")
+      }
     }
 
     this.thememode = (localStorage.getItem("thememode") == "true")

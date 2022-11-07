@@ -21,7 +21,7 @@
               <i class="bi-cart-fill me-1"></i>
               Add to cart
             </button>
-            <button class="favorites" (click)="addToFavorites()" [ngClass]="favoritesStatus ? 'favorite-dark_mode' : ''">
+            <button class="favorites" (click)="addToFavorites()" [ngClass]="favoritesStatus && getThemeMode() ? 'favorite-dark_mode' : ''">
               <fa-icon [ngClass]="getThemeMode() ? 'product-favorite-dark_mode' : ''" [icon]="favoritesStatus ? faFullHeart : faHeart"></fa-icon>
             </button>
           </div>

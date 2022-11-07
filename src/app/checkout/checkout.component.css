@@ -86,6 +86,16 @@
   color: red;
 }
 
+#cardNumber::-webkit-outer-spin-button,
+#cardNumber::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#cardNumber {
+  -moz-appearance: textfield
+}
+
 .position-absolute {
   position: absolute;
   top:80%;
