@@ -7,12 +7,9 @@ import { Product } from './dati/product.data';
 export class ProductOrderbyPipe implements PipeTransform {
 
   transform(value: Product[], filter :String, order ?:String): Product[] {
-    console.log(filter);
 
     switch(filter) {
       case 'price':
-        console.log("wew");
-
         return value.sort((a, b) => (Number(a.price) < Number(b.price)) ? 1 : -1)
 
       case 'review':
