@@ -16,6 +16,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductSearch } from './product-search.pipe';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { FavoriteSearchPipe } from './favorite-search.pipe';
+import { ProductOrderbyPipe } from './product-orderby.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FavoriteSearchPipe } from './favorite-search.pipe';
     ProductSearch,
     FavoritesComponent,
     FavoriteSearchPipe,
+    ProductOrderbyPipe,
   ],
   imports: [
     BrowserModule,

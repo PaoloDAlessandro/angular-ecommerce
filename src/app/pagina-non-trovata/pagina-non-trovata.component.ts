@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThememodeService } from '../thememode.service';
 
 @Component({
   selector: 'app-pagina-non-trovata',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaNonTrovataComponent implements OnInit {
 
-  constructor() { }
+  constructor(private themeModeService :ThememodeService) { }
 
   ngOnInit(): void {
+  }
+
+  getThemeMode() {
+    return this.themeModeService.thememode
   }
 
 }

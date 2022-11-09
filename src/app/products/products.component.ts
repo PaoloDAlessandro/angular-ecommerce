@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { Product } from '../dati/product.data';
 import { ProductsService } from '../products.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import { faBoxOpen } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { ProductSearch } from '../product-search.pipe';
@@ -18,6 +18,7 @@ export class ProductsComponent implements OnInit {
 
   faBoxOpen = faBoxOpen;
   faStar = faStar;
+  faFilter = faFilter;
   name = ""
   private productsSubscription?:Subscription
 

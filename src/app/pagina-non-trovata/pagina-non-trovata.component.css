@@ -2,3 +2,7 @@
   height: 90vh !important;
   padding-bottom: 130px;
 }
+
+.dark_mode-404 {
+  color: white;
+}

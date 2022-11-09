@@ -1,11 +1,12 @@
 <div class="background-gray" [ngClass]="getThemeMode() ? 'product-container-dark_mode' : ''">
-  <div class="input-container input-mobile" [ngClass]="getThemeMode() ? 'input-container-dark_mode' : ''">
-    <input type="text" [(ngModel)]="name" placeholder="Search a product">
+      <div class="input-container input-mobile" [ngClass]="getThemeMode() ? 'input-container-dark_mode' : ''">
+        <input type="text" [(ngModel)]="name" placeholder="Search a product">
+    </div>
+
   </div>
-</div>
 
 <div class="product-container" [ngClass]="getThemeMode() ? 'product-container-dark_mode' : ''">
-    <div *ngFor="let product of products! | productSearch:name" class="mb-5 temp">
+    <div *ngFor="let product of products! | productSearch:name | productOrderby:''" class="mb-5 temp">
       <div class="card" [ngClass]="getThemeMode() ? 'product-card-dark_mode' : ''">
         <a [routerLink]="product.slug">
           <img class="card-img-top card-resize" [src]="'/assets/images/' + product.photo" alt="...">
