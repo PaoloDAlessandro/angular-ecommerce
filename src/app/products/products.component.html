@@ -1,12 +1,24 @@
-<div class="background-gray" [ngClass]="getThemeMode() ? 'product-container-dark_mode' : ''">
-      <div class="input-container input-mobile" [ngClass]="getThemeMode() ? 'input-container-dark_mode' : ''">
+<div class="background-gray flex-command" [ngClass]="getThemeMode() ? 'product-container-dark_mode' : ''">
+  <div class="w-40">
+
+  </div>
+  <div class="input-container input-mobile" [ngClass]="getThemeMode() ? 'input-container-dark_mode' : ''">
         <input type="text" [(ngModel)]="name" placeholder="Search a product">
-    </div>
+  </div>
+  <div class="w-40">
+    <select class="form-select w-20" [(ngModel)]="orderby" [ngClass]="getThemeMode() ? 'select-dark_mode' : ''" aria-label="Default select example">
+      <option selected value="">Order by</option>
+      <option value="priceHtL">Price: High to Low</option>
+      <option value="priceLtH">Price: Low to High</option>
+      <option value="reviewHtL">Review: High to Low</option>
+      <option value="reviewLtH">Review: Low to High</option>
+    </select>
+  </div>
 
   </div>
 
 <div class="product-container" [ngClass]="getThemeMode() ? 'product-container-dark_mode' : ''">
-    <div *ngFor="let product of products! | productSearch:name | productOrderby:'stock':'csdres'" class="mb-5 temp">
+    <div *ngFor="let product of products! | productSearch:name | productOrderby:orderby" class="mb-5 temp">
       <div class="card" [ngClass]="getThemeMode() ? 'product-card-dark_mode' : ''">
         <a [routerLink]="product.slug">
           <img class="card-img-top card-resize" [src]="'/assets/images/' + product.photo" alt="...">

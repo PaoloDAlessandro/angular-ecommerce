@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit {
   faStar = faStar;
   faFilter = faFilter;
   name = ""
+  orderby = ""
   private productsSubscription?:Subscription
 
   products:Product[] = []

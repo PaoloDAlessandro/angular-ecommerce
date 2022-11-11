@@ -36,16 +36,8 @@
     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 mobile-nav-ul mobile-options">
       <li><a routerLink="/" routerLinkActive="text-secondary" (click)="mobileMenuSwitch()" [routerLinkActiveOptions]="{exact:true}" class="nav-link px-2 header-link">Home</a></li>
       <li><a routerLink="/products" routerLinkActive="text-secondary" (click)="mobileMenuSwitch()" class="nav-link px-2 header-link">Products</a></li>
-      <li>
-        <a routerLink="/favorites" routerLinkActive="text-secondary" (click)="mobileMenuSwitch()" class="nav-link px-2 header-link">
-          <fa-icon [icon]="faHeart"></fa-icon>
-        </a>
-      </li>
-      <li>
-        <a routerLink="/cart" routerLinkActive="text-secondary" (click)="mobileMenuSwitch()" class="nav-link px-2 header-link">
-          <fa-icon [icon]="faCartShopping"></fa-icon>
-        </a>
-      </li>
+      <li><a routerLink="/favorites" routerLinkActive="text-secondary" (click)="mobileMenuSwitch()" class="nav-link px-2 header-link">Wish</a></li>
+      <li><a routerLink="/cart" routerLinkActive="text-secondary" (click)="mobileMenuSwitch()" class="nav-link px-2 header-link">Cart</a></li>
       </ul>
   </div>
 </div>
