@@ -11,7 +11,7 @@ export class ProductOrderbyPipe implements PipeTransform {
 
   }
 
-  transform(value: Product[], filter :String, order ?:String, category ?:String): Product[] {
+  transform(value: Product[], filter :String, category ?:String): Product[] {
 
     switch(filter) {
       case 'priceHtL':
@@ -25,6 +25,12 @@ export class ProductOrderbyPipe implements PipeTransform {
 
       case 'reviewLtH':
         return value.sort((a, b) => (Number(a.reviews) > Number(b.reviews) ? 1 : -1))
+
+      case 'category':
+        if(category === "") {
+          return value
+        }
+        return value.filter(p => p.category === category)
 
       default:
         return this.productService.products

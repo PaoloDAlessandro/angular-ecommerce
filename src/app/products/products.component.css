@@ -5,6 +5,7 @@
 .flex-command {
   display: flex;
   padding-top: 50px;
+  align-items: center;
 }
 
 .input-container {
@@ -27,7 +28,11 @@
   background-color: #282A2D;
   color: rgba(255, 255, 255, 0.48);
   outline: none;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.m-top {
+  margin-top: 10px;
 }
 
 .features-flex {
@@ -55,7 +60,7 @@
 .input-container input {
   width: 100%;
   border-radius: .375rem;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   outline-color:#0E6EFD;
   padding: 6px 12px;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;

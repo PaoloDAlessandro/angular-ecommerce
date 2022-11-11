@@ -21,12 +21,19 @@ export class ProductsComponent implements OnInit {
   faFilter = faFilter;
   name = ""
   orderby = ""
+  category = ""
+  categories :String[] = []
   private productsSubscription?:Subscription
 
   products:Product[] = []
 
   constructor(private productsService:ProductsService, private themeModeService :ThememodeService) {
     this.products = productsService.products
+    this.products.forEach(p => {
+      if(!this.categories.includes(p.category)) {
+        this.categories.push(p.category)
+      }
+    });
    }
 
   ngOnInit(): void {
@@ -35,11 +42,4 @@ export class ProductsComponent implements OnInit {
   getThemeMode() {
     return this.themeModeService.thememode
   }
-
-  /*
-  searchProduct() {
-    this.products = this.productsService.products.filter(p => p.name.toLowerCase().indexOf(this.name.toLowerCase()) != -1)
-  }
-  */
-
 }

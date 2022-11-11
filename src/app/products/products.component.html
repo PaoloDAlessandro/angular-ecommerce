@@ -7,18 +7,24 @@
   </div>
   <div class="w-40">
     <select class="form-select w-20" [(ngModel)]="orderby" [ngClass]="getThemeMode() ? 'select-dark_mode' : ''" aria-label="Default select example">
-      <option selected value="">Order by</option>
+      <option selected value="">Suggestions</option>
       <option value="priceHtL">Price: High to Low</option>
       <option value="priceLtH">Price: Low to High</option>
       <option value="reviewHtL">Review: High to Low</option>
       <option value="reviewLtH">Review: Low to High</option>
+      <option value="category">Category</option>
+    </select>
+
+    <select class="form-select w-20 m-top" [(ngModel)]="category" [ngClass]="getThemeMode() ? 'select-dark_mode' : ''" aria-label="Default select example" *ngIf="orderby === 'category'">
+      <option value="" default>all</option>
+      <option [value]="cate" *ngFor="let cate of categories">{{cate}}</option>
     </select>
   </div>
 
   </div>
 
 <div class="product-container" [ngClass]="getThemeMode() ? 'product-container-dark_mode' : ''">
-    <div *ngFor="let product of products! | productSearch:name | productOrderby:orderby" class="mb-5 temp">
+    <div *ngFor="let product of products! | productSearch:name | productOrderby:orderby:category" class="mb-5 temp">
       <div class="card" [ngClass]="getThemeMode() ? 'product-card-dark_mode' : ''">
         <a [routerLink]="product.slug">
           <img class="card-img-top card-resize" [src]="'/assets/images/' + product.photo" alt="...">
