@@ -13,6 +13,8 @@ export class ProductOrderbyPipe implements PipeTransform {
 
   transform(value: Product[], filter :String, category ?:String): Product[] {
 
+    value = this.productService.products //da capire perchè non funziona se si prendono i products del componente
+
     switch(filter) {
       case 'priceHtL':
           return value.sort((a, b) => (Number(a.price) < Number(b.price)) ? 1 : -1)

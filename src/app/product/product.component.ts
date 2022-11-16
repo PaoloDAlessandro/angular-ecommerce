@@ -79,7 +79,7 @@ export class ProductComponent implements OnInit {
     else {
       this.favoriteService.removeToFavorites(this.product as Product)
       this.favoritesStatus = false
-    }
+    } 
   }
 
   onQuantityChange() {

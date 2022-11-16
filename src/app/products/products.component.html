@@ -24,7 +24,7 @@
   </div>
 
 <div class="product-container" [ngClass]="getThemeMode() ? 'product-container-dark_mode' : ''">
-    <div *ngFor="let product of products! | productSearch:name | productOrderby:orderby:category" class="mb-5 temp">
+    <div *ngFor="let product of (products! | productOrderby:orderby:category) | productSearch:name" class="mb-5 temp">
       <div class="card" [ngClass]="getThemeMode() ? 'product-card-dark_mode' : ''">
         <a [routerLink]="product.slug">
           <img class="card-img-top card-resize" [src]="'/assets/images/' + product.photo" alt="...">
