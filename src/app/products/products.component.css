@@ -143,6 +143,29 @@
   background-color: #0b5ed7;
 }
 
+.no-product-found-background {
+  background-color: #F3F7F9;
+}
+
+.no-product-found-background-dark_mode {
+  background-color: #000000;
+}
+
+.no-product-found-dark_mode {
+  color: white;
+}
+
+.no-product-found {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10vh;
+}
+
+.no-product-found h1 {
+  margin: 0;
+}
+
 .card-product-reviews {
   display: flex;
   width: 70%;

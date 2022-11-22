@@ -20,11 +20,15 @@
       <option [value]="cate" *ngFor="let cate of categories">{{cate}}</option>
     </select>
   </div>
-
+  </div>
+  <div class="no-product-found-background" [ngClass]="getThemeMode() ? 'no-product-found-background-dark_mode' : ''" *ngIf="(products | productSearch:name).length == 0">
+    <div class="no-product-found" [ngClass]="getThemeMode() ? 'no-product-found-dark_mode' : ''">
+      <h1>No product found :(</h1>
+    </div>
   </div>
 
 <div class="product-container" [ngClass]="getThemeMode() ? 'product-container-dark_mode' : ''">
-    <div *ngFor="let product of (products! | productOrderby:orderby:category) | productSearch:name" class="mb-5 temp">
+    <div *ngFor="let product of (products | productOrderby:orderby:category) | productSearch:name" class="mb-5 temp">
       <div class="card" [ngClass]="getThemeMode() ? 'product-card-dark_mode' : ''">
         <a [routerLink]="product.slug">
           <img class="card-img-top card-resize" [src]="'/assets/images/' + product.photo" alt="...">
