@@ -1,3 +1,5 @@
+import { Review } from './review.data';
+
 export type Product = {
   code:string,
   name:string,
@@ -7,5 +9,6 @@ export type Product = {
   photo:string,
   price:string,
   stock:Number,
-  reviews:Number
+  reviews:Number,
+  reviewsList:[Review],
 }

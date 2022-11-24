@@ -192,6 +192,95 @@ input[type=number] {
   color: white;
 }
 
+.reviews-container {
+  overflow-x: scroll;
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  scroll-behavior: smooth;
+}
+
+.carosel-button {
+  width: 3%;
+}
+
+.button-no-style {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+.carosel {
+  align-items: center;
+}
+
+.review-card {
+  width: 40%;
+  min-width: 40%;
+  height: 220px;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 0.375rem;
+  margin-right: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+.review-card-dark_mode {
+  background-color: #110F15;
+}
+
+.review-card-header-dark_mode h4 {
+  color: white;
+}
+
+.review-card-body-dark_mode {
+  color: #abaab9;
+}
+
+.review-card-header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin: 10px 25px 0 25px;
+}
+
+.review-card-header img {
+  height: 50px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.review-card-header h4 {
+  margin-left: 12px;
+  margin-bottom: 0;
+}
+
+.review-card-header .score {
+  display: flex;
+  margin: 0 15px 0 auto;
+}
+
+.review-card-header fa-icon {
+  margin: 0 10px;
+}
+
+.review-card-body {
+  margin: 10px 25px 0;
+}
+
+.review-card-body p {
+  text-align: justify;
+}
+
+.carosel-button-dark_mode {
+  color: white;
+}
+
+.star-yellow {
+  color: #F8A04D !important;
+}
+
 @media only screen and (max-width: 600px) {
   .product-image-resize {
     width: 100% !important;

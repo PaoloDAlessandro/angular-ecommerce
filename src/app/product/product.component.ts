@@ -6,6 +6,8 @@ import { ProductsService } from '../products.service';
 import { NameShorterPipe } from '../name-shorter.pipe';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faStar } from '@fortawesome/free-regular-svg-icons';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as fullHeart } from '@fortawesome/free-solid-svg-icons';
 import { FavoritesService } from '../favorites.service';
 import { ThememodeService } from '../thememode.service';
@@ -26,6 +28,9 @@ export class ProductComponent implements OnInit {
   faCircleCheck = faCircleCheck
   faHeart = faHeart
   faFullHeart = fullHeart
+  faStar = faStar
+  faAngleLeft = faAngleLeft
+  faAngleRight = faAngleRight
 
   availability = true
   addToCartStatus = false
@@ -62,7 +67,7 @@ export class ProductComponent implements OnInit {
   onAddToCartCall() {
 
     if (this.product != undefined) {
-      this.productCart = {code: this.product.code, name: this.product?.name, category: this.product.category, slug: this.product.slug, description: this.product.description, price: this.product.price, photo: this.product.photo, stock:this.quantity, reviews: this.product.reviews }
+      this.productCart = {code: this.product.code, name: this.product?.name, category: this.product.category, slug: this.product.slug, description: this.product.description, price: this.product.price, photo: this.product.photo, stock:this.quantity, reviews: this.product.reviews, reviewsList: this.product.reviewsList }
     }
     if(this.quantity <= this.productService.searchProduct(this.product?.slug as String)!.stock) {
       this.productService.addToCart(this.productCart as Product)
@@ -79,7 +84,7 @@ export class ProductComponent implements OnInit {
     else {
       this.favoriteService.removeToFavorites(this.product as Product)
       this.favoritesStatus = false
-    } 
+    }
   }
 
   onQuantityChange() {
@@ -97,6 +102,18 @@ export class ProductComponent implements OnInit {
 
   disableModal() {
     this.addToCartStatus = false
+  }
+
+  scrollLeft() {
+    const reviews_container = document.getElementById("reviews-container");
+    const review_card_width = document.getElementById("first-review")?.offsetWidth || 200
+    reviews_container!.scrollLeft += review_card_width * 2.4;
+  }
+
+  scrollRight() {
+    const reviews_container = document.getElementById("reviews-container");
+    const review_card_width = document.getElementById("first-review")?.offsetWidth || 200
+    reviews_container!.scrollLeft -= review_card_width * 2.4;
   }
 
 }

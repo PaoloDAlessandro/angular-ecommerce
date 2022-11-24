@@ -31,8 +31,89 @@
   </section>
 </div>
 
-
 <div class="background-gray" [ngClass]="getThemeMode() ? 'back-dark_mode' : ''">
+  <section class="py-5 bg-light background-white" [ngClass]="getThemeMode() ? 'related-dark_mode' : ''">
+    <div class="container px-4 px-lg-5 mt-5 related-product-fix_margin">
+        <h2 class="fw-bolder mb-4 related-product_title-fix_margin" [ngClass]="getThemeMode() ? 'related-title-dark_mode' : ''">Reviews</h2>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-evenly carosel">
+          <div class="carosel-button">
+            <button class="button-no-style" (click)="scrollRight()">
+              <fa-icon [ngClass]="getThemeMode() ? 'carosel-button-dark_mode' : ''" [icon]="faAngleLeft"></fa-icon>
+            </button>
+          </div>
+          <div class="reviews-container" id="reviews-container">
+            <div class="review-card" [ngClass]="getThemeMode() ? 'review-card-dark_mode' : ''" id="first-review">
+              <div class="review-card-header" [ngClass]="getThemeMode() ? 'review-card-header-dark_mode' : ''">
+                <img src="/assets/images/userphoto_example.jpg" alt="">
+                <h4 class="">paolodalex</h4>
+                <div class="score">
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                </div>
+              </div>
+              <div class="review-card-body" [ngClass]="getThemeMode() ? 'review-card-body-dark_mode' : ''">
+                <p>Il prodotto è arrivato il giorno previsto in perfette condizioni, la qualità del suono è davvero il massimo per questo prezzo. Comode e isolano bene si nota subito i materiali di alta qualità.</p>
+              </div>
+            </div>
+            <div class="review-card" [ngClass]="getThemeMode() ? 'review-card-dark_mode' : ''">
+              <div class="review-card-header" [ngClass]="getThemeMode() ? 'review-card-header-dark_mode' : ''">
+                <img src="/assets/images/userphoto_example.jpg" alt="">
+                <h4 class="">paolodalex</h4>
+                <div class="score">
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                </div>
+              </div>
+              <div class="review-card-body" [ngClass]="getThemeMode() ? 'review-card-body-dark_mode' : ''">
+                <p>Il prodotto è arrivato il giorno previsto in perfette condizioni, la qualità del suono è davvero il massimo per questo prezzo. Comode e isolano bene si nota subito i materiali di alta qualità.</p>
+              </div>
+            </div>
+            <div class="review-card" [ngClass]="getThemeMode() ? 'review-card-dark_mode' : ''">
+              <div class="review-card-header" [ngClass]="getThemeMode() ? 'review-card-header-dark_mode' : ''">
+                <img src="/assets/images/userphoto_example.jpg" alt="">
+                <h4 class="">paolodalex</h4>
+                <div class="score">
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                </div>
+              </div>
+              <div class="review-card-body" [ngClass]="getThemeMode() ? 'review-card-body-dark_mode' : ''">
+                <p>Il prodotto è arrivato il giorno previsto in perfette condizioni, la qualità del suono è davvero il massimo per questo prezzo. Comode e isolano bene si nota subito i materiali di alta qualità.</p>
+              </div>
+            </div>
+            <div class="review-card" [ngClass]="getThemeMode() ? 'review-card-dark_mode' : ''">
+              <div class="review-card-header" [ngClass]="getThemeMode() ? 'review-card-header-dark_mode' : ''">
+                <img src="/assets/images/userphoto_example.jpg" alt="">
+                <h4 class="">paolodalex</h4>
+                <div class="score">
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                  <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
+                </div>
+              </div>
+              <div class="review-card-body" [ngClass]="getThemeMode() ? 'review-card-body-dark_mode' : ''">
+                <p>Il prodotto è arrivato il giorno previsto in perfette condizioni, la qualità del suono è davvero il massimo per questo prezzo. Comode e isolano bene si nota subito i materiali di alta qualità.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="carosel-button">
+            <button class="button-no-style" (click)="scrollLeft()">
+              <fa-icon [ngClass]="getThemeMode() ? 'carosel-button-dark_mode' : ''" [icon]="faAngleRight"></fa-icon>
+            </button>
+          </div>
+
+        </div>
+    </div>
+  </section>
+
 <section class="py-5 bg-light background-white" [ngClass]="getThemeMode() ? 'related-dark_mode' : ''">
   <div class="container px-4 px-lg-5 mt-5 related-product-fix_margin">
       <h2 class="fw-bolder mb-4 related-product_title-fix_margin" [ngClass]="getThemeMode() ? 'related-title-dark_mode' : ''">Related products</h2>

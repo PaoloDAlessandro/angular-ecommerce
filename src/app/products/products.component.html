@@ -23,7 +23,7 @@
   </div>
   <div class="no-product-found-background" [ngClass]="getThemeMode() ? 'no-product-found-background-dark_mode' : ''" *ngIf="(products | productSearch:name).length == 0">
     <div class="no-product-found" [ngClass]="getThemeMode() ? 'no-product-found-dark_mode' : ''">
-      <h1>No product found :(</h1>
+      <h1>Products research by "{{name}}" produced 0 result</h1>
     </div>
   </div>
 
