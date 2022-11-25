@@ -44,8 +44,10 @@
           <div class="reviews-container" id="reviews-container">
             <div class="review-card" [ngClass]="getThemeMode() ? 'review-card-dark_mode' : ''" id="first-review">
               <div class="review-card-header" [ngClass]="getThemeMode() ? 'review-card-header-dark_mode' : ''">
-                <img src="/assets/images/userphoto_example.jpg" alt="">
-                <h4 class="">paolodalex</h4>
+                <div class="review-card-header-user">
+                  <img src="/assets/images/userphoto_example.jpg" alt="">
+                  <h4 class="">paolodalex</h4>
+                </div>
                 <div class="score">
                   <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>
                   <fa-icon class="star-yellow" [icon]="faStar"></fa-icon>

@@ -6,7 +6,7 @@ import { ProductsService } from '../products.service';
 import { NameShorterPipe } from '../name-shorter.pipe';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as fullHeart } from '@fortawesome/free-solid-svg-icons';
 import { FavoritesService } from '../favorites.service';
@@ -107,6 +107,7 @@ export class ProductComponent implements OnInit {
   scrollLeft() {
     const reviews_container = document.getElementById("reviews-container");
     const review_card_width = document.getElementById("first-review")?.offsetWidth || 200
+    //reviews_container!.style.width = review_card_width * 2 + 100 - 48 + "px"
     reviews_container!.scrollLeft += review_card_width * 2.4;
   }
 
