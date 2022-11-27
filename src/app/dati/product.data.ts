@@ -10,5 +10,5 @@ export type Product = {
   price:string,
   stock:Number,
   reviews:Number,
-  reviewsList:[Review],
+  reviewsList:Review[],
 }

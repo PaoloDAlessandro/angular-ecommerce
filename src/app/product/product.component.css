@@ -92,6 +92,10 @@
   color: #abaab9;
 }
 
+.review-card-header-user {
+  display: contents;
+}
+
 .text-justify {
   text-align: justify;
 }
@@ -214,6 +218,18 @@ input[type=number] {
   border: 0;
   outline: 0;
   background-color: transparent;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  background-color: #F3F7F9;
+}
+
+.button-no-style-dark_mode {
+  background-color: #04030C;
+  border: 1px solid #ffffff0e;
+}
+
+.button-no-style:hover {
+  border: 1px solid rgba(0, 0, 0, 0.175);
 }
 
 .carosel {
@@ -272,7 +288,7 @@ input[type=number] {
 }
 
 .review-card-header fa-icon {
-  margin: 0 10px;
+  margin: 0 .5vh;
 }
 
 .review-card-body {
