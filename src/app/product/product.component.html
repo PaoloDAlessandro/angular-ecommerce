@@ -71,6 +71,10 @@
     </div>
   </section>
 
+  <!--
+    <div class="info-divider"></div>
+  -->
+
 <section class="py-5 bg-light background-white" [ngClass]="getThemeMode() ? 'related-dark_mode' : ''">
   <div class="container px-4 px-lg-5 mt-5 related-product-fix_margin">
       <h2 class="fw-bolder mb-4 related-product_title-fix_margin" [ngClass]="getThemeMode() ? 'related-title-dark_mode' : ''">Related products</h2>
@@ -102,7 +106,7 @@
       <div class="modal-content rounded-3 shadow" [ngClass]="getThemeMode() ? 'modal-background-dark_mode' : ''">
         <div class="modal-body p-4 text-center">
           <h5 class="mb-0" [ngClass]="getThemeMode() ? 'modal-title-dark_mode' : ''"><fa-icon [icon]="faCircleCheck"></fa-icon>&nbsp; Product added to cart!</h5>
-          <p class="mb-0" [ngClass]="getThemeMode() ? 'modal-text-dark_mode' : ''">Now you can find {{ product?.name }} in the cart section</p>
+          <p class="mb-0 modal-text" [ngClass]="getThemeMode() ? 'modal-text-dark_mode' : ''">Now you can find {{ product?.name }} in the cart section</p>
         </div>
         <div class="modal-footer flex-nowrap p-0" [ngClass]="getThemeMode() ? 'modal-footer-dark_mode' : ''">
           <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-end" [ngClass]="getThemeMode() ? 'modal-button-left-dark_mode' : ''" (click)="disableModal()"><strong>Continue shopping</strong></button>

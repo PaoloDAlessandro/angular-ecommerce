@@ -62,7 +62,12 @@
 
 .cart-card-info {
   width: 18%;
-  text-align: center;
+}
+
+.card-card-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cart-edit-stock {
@@ -125,7 +130,7 @@
 }
 
 .cart-product-image {
-  text-align: center;
+  width: auto;
 }
 
 .cart-product-image img {

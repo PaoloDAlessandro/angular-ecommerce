@@ -3,7 +3,7 @@
 
   <div class="cart-container" [ngClass]="getThemeMode() ? 'cart-container-dark_mode' : ''">
       <div class="cart-card" *ngFor="let product of userCart" [ngClass]="getThemeMode() ? 'cart-card-dark_mode' : ''">
-        <div class="cart-card-info">
+        <div class="cart-card-info card-card-center">
           <div class="cart-card-info cart-product-image">
               <a [routerLink]= "'/products/' + product.slug">
               <img [src]="'/assets/images/' + product?.photo" [alt]="product.slug">

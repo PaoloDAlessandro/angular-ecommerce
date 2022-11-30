@@ -135,6 +135,10 @@
   color: white;
 }
 
+.modal-text {
+  margin-top: 6px;
+}
+
 .modal-text-dark_mode {
   color: rgba(255, 255, 255, 0.48);
 }
@@ -280,11 +284,19 @@ input[type=number] {
 .review-card-header h4 {
   margin-left: 12px;
   margin-bottom: 0;
+  font-weight: 400;
 }
 
 .review-card-header .score {
   display: flex;
   margin: 0 15px 0 auto;
+}
+
+.info-divider {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #cccccc;
 }
 
 .review-card-header fa-icon {
