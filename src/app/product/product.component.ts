@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product } from '../dati/product.data';
 import { ProductsService } from '../products.service';
-import { NameShorterPipe } from '../name-shorter.pipe';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -61,6 +60,7 @@ export class ProductComponent implements OnInit {
       this.product = this.productService.searchProduct(slug)
       this.relatedProducts = this.productService.searchByCategoryProduct(this.product?.category as String, this.product?.name as String)
       this.favoritesStatus = this.favoriteService.checkFavorites(this.product as Product)
+      this.checkAvailability()
     })
   }
 
@@ -73,6 +73,16 @@ export class ProductComponent implements OnInit {
       this.productService.addToCart(this.productCart as Product)
       this.productService.searchProduct(this.product?.slug as String)!.stock =  Number(this.productService.searchProduct(this.product?.slug as String)?.stock) - Number(this.quantity)
       this.addToCartStatus = true
+    }
+    this.checkAvailability()
+  }
+
+  checkAvailability() {
+    if(this.quantity <= this.productService.searchProduct(this.product?.slug as String)!.stock) {
+      this.availability = true
+    }
+    else {
+      this.availability = false
     }
   }
 
@@ -88,12 +98,7 @@ export class ProductComponent implements OnInit {
   }
 
   onQuantityChange() {
-    if(this.quantity <= this.productService.searchProduct(this.product?.slug as String)!.stock) {
-      this.availability = true
-    }
-    else {
-      this.availability = false
-    }
+    this.checkAvailability()
   }
 
   getThemeMode() {
@@ -108,13 +113,32 @@ export class ProductComponent implements OnInit {
     const reviews_container = document.getElementById("reviews-container");
     const review_card_width = document.getElementById("first-review")?.offsetWidth || 200
     //reviews_container!.style.width = review_card_width * 2 + 100 - 48 + "px"
-    reviews_container!.scrollLeft += review_card_width * 2.4;
+    if(this.getDeviceType() == "mobile") {
+      reviews_container!.scrollLeft += review_card_width * 1.22;
+    } else {
+      reviews_container!.scrollLeft += review_card_width * 2.5;
+    }
   }
 
   scrollRight() {
     const reviews_container = document.getElementById("reviews-container");
     const review_card_width = document.getElementById("first-review")?.offsetWidth || 200
-    reviews_container!.scrollLeft -= review_card_width * 2.4;
+    if(this.getDeviceType() == "mobile") {
+      reviews_container!.scrollLeft -= review_card_width * 1.22;
+    } else {
+      reviews_container!.scrollLeft -= review_card_width * 2.5;
+    }
   }
+
+  getDeviceType() {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+      return "tablet";
+    }
+    if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+      return "mobile";
+    }
+      return "desktop";
+    }
 
 }

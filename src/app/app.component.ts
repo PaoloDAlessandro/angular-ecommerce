@@ -57,5 +57,5 @@ export class AppComponent implements OnInit {
       return "mobile";
     }
       return "desktop";
-    };
+    }
   }
