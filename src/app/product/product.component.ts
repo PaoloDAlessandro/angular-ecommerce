@@ -97,8 +97,15 @@ export class ProductComponent implements OnInit {
     }
   }
 
+  checkQuantityInput() {
+    if(this.quantity <= 0) {
+      this.availability = false
+    }
+  }
+
   onQuantityChange() {
     this.checkAvailability()
+    this.checkQuantityInput()
   }
 
   getThemeMode() {
